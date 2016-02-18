@@ -66,7 +66,7 @@ function js_custom_init()
         'has_archive' => false, 
         'hierarchical' => false, // 'false' acts like posts 'true' acts like pages
         'menu_position' => 20,
-        'supports' => array('title','editor','custom-fields','thumbnail'),
+        'supports' => array('title','editor','custom-fields'),
       
       ); 
   register_post_type('story',$args); // name used in query
