@@ -9,15 +9,29 @@
  * @package ACC_Starter_Theme
  */
 
+
+$info = get_field('footer_left_info', 'option');
+$sitemap = get_field('sitemap_link', 'option');
 ?>
 
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'acc-starter-theme' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'acc-starter-theme' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'acc-starter-theme' ), 'acc-starter-theme', '<a href="http://underscores.me/" rel="designer">Austin Crane</a>' ); ?>
+		<div class="site-info wrapper">
+		
+			<div class="footer-left">
+				<?php echo $info; ?>
+			</div><!-- footer left -->
+
+			<div class="footer-right">
+				<div class="footer-email">
+					<h3>Join Our Mailing List</h3>
+				</div><!-- footer-email -->
+				<div class="creds">
+					<?php echo '<a href="'.$sitemap.'">sitemap</a> | site by <a target="_blank" href="http://bellaworksweb.com/?r=foundation">Bellaworks</a>'; ?>
+				</div><!-- creds -->
+			</div><!-- footer left -->
+
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

@@ -22,3 +22,37 @@
 @mixin clearfix-after() {
 	clear: both;
 }
+
+// Border Radius Prefix
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+// Transition Prefix
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+// Border Radius Prefix
+@mixin column-count($count) {
+  -webkit-column-count: $count;
+     -moz-column-count: $count;
+      -ms-column-count: $count;
+          column-count: $count;
+}
+
+// Transform  Prefix
+@mixin rotate($degrees) {
+    -webkit-transform: rotate($degrees);
+    -moz-transform: rotate($degrees);
+    -ms-transform: rotate($degrees);
+    -o-transform: rotate($degrees);
+    transform: rotate($degrees);
+}

@@ -14,43 +14,161 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+<?php
+	$wp_query = new WP_Query();
+	$wp_query->query(array(
+	'post_type'=>'page',
+	'page_id' => 49
+));
+	if ($wp_query->have_posts()) : while ($wp_query->have_posts()) : $wp_query->the_post(); 
+
+	// Get field Name
+		$sizeLarge = 'large';
+		$sizeMed = 'medium';
+		$banner_image = get_field('banner_image'); 
+		$content_image_one = get_field('image_1');
+		$content_image_two = get_field('image_2');
+		$content_image_three = get_field('image_3'); 
+		$title = $banner_image['title'];
+		$alt = $banner_image['alt'];
+		$titleOne = $content_image_one['title'];
+		$altOne = $content_image_one['alt'];
+		$titleTwo = $content_image_two['title'];
+		$altTwo = $content_image_two['alt'];
+		$titleThree = $content_image_three['title'];
+		$altThree = $content_image_three['alt'];
+	 	$thumb = $banner_image['sizes'][ $sizeLarge ];
+	 	$thumbOne = $content_image_one['sizes'][ $sizeMed ];
+	 	$thumbTwo= $content_image_two['sizes'][ $sizeMed ];
+	 	$thumbThree = $content_image_three['sizes'][ $sizeMed ];
+	 	$bannerText = get_field('banner_text');
+	 	$contentOne = get_field('content_1');
+	 	$textOne = get_field('text_1');
+	 	$contentTwo = get_field('content_2');
+	 	$textTwo = get_field('text_2');
+	 	$contentThree = get_field('content_3');
+	 	$textThree = get_field('text_3');
+
+	?>
+
+	<div class="home-banner">
+		<div class="wrapper bann-img">
+			<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" title="<?php echo $title; ?>" />
+			<div class="banner-text"><?php echo $bannerText; ?></div>
+		</div><!-- wrapper -->
+	</div><!-- home banner -->
+
+ 	
+    <?php endwhile; endif; ?>
+<div class="wrapper">
+	<div id="primary" class="">
 		<main id="main" class="site-main" role="main">
 
-		<?php
-		if ( have_posts() ) :
+		
+<?php
+/*
 
-			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
+		First Content Block
 
-			<?php
-			endif;
 
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+*/
+	$post_object = $contentOne;
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+	if( $post_object ): 
 
-			endwhile;
+		// override $post
+		$post = $post_object;
+		setup_postdata( $post ); 
 
-			the_posts_navigation();
+		?>
+    
+		<div class="content-block block-left blocks">
+			<div class="block-image">
+				<img src="<?php echo $thumbOne; ?>" alt="<?php echo $altOne; ?>" title="<?php echo $titleOne; ?>" />
+			</div>
+			<h2><?php the_title(); ?></h2>
+			<div class="content-block-excerpt">
+				<?php if( $textOne != '' ) {
+					echo $textOne;
+				} else {
+					the_excerpt();
+				} ?>
+		</div><!-- content block excerpt -->
+			<div class="learnmore"><a href="<?php the_permalink(); ?>">Learn More</a></div>
+		</div><!-- content block -->
+		<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+<?php endif; ?>
 
-		else :
+<?php
+/*
 
-			get_template_part( 'template-parts/content', 'none' );
+		Second Content Block
 
-		endif; ?>
+
+*/
+	$post_object = $contentTwo;
+
+	if( $post_object ): 
+
+		// override $post
+		$post = $post_object;
+		setup_postdata( $post ); 
+
+		?>
+    
+		<div class="content-block block-left blocks">
+			<div class="block-image">
+				<img src="<?php echo $thumbTwo; ?>" alt="<?php echo $altTwo; ?>" title="<?php echo $titleTwo; ?>" />
+			</div>
+			<h2><?php the_title(); ?></h2>
+			<div class="content-block-excerpt">
+				<?php if( $textTwo != '' ) {
+					echo $textTwo;
+				} else {
+					the_excerpt();
+				} ?>
+		</div><!-- content block excerpt -->
+			<div class="learnmore"><a href="<?php the_permalink(); ?>">Learn More</a></div>
+		</div><!-- content block -->
+		<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+<?php endif; ?>
+
+<?php
+/*
+
+		Third Content Block
+
+
+*/
+	$post_object = $contentThree;
+
+	if( $post_object ): 
+
+		// override $post
+		$post = $post_object;
+		setup_postdata( $post ); 
+
+		?>
+    
+		<div class="content-block block-right blocks">
+			<div class="block-image">
+				<img src="<?php echo $thumbThree ?>" alt="<?php echo $altThree; ?>" title="<?php echo $titleThree; ?>" />
+			</div>
+			<h2><?php the_title(); ?></h2>
+			<div class="content-block-excerpt">
+				<?php if( $textThree != '' ) {
+					echo $textThree;
+				} else {
+					the_excerpt();
+				} ?>
+		</div><!-- content block excerpt -->
+			<div class="learnmore"><a href="<?php the_permalink(); ?>">Learn More</a></div>
+		</div><!-- content block -->
+		<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+<?php endif; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
+</div><!-- wrapper -->
 <?php
-get_sidebar();
 get_footer();

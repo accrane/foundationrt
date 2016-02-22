@@ -8,28 +8,57 @@
  */
 
 get_header(); ?>
-
+<div class="wrapper">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
 		<?php
-		while ( have_posts() ) : the_post();
+		while ( have_posts() ) : the_post(); ?>
 
-			get_template_part( 'template-parts/content', get_post_format() );
+		<article id="post-<?php the_ID(); ?>" class="single">
+			<header class="entry-header">
+				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+				
+				<div class="entry-meta">
+					<?php acc_starter_theme_posted_on(); ?>
+				</div><!-- .entry-meta -->
+				
+			</header><!-- .entry-header -->
 
-			the_post_navigation();
+			<div class="entry-content">
+				<?php
+					the_content( sprintf(
+						/* translators: %s: Name of current post. */
+						wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'acc-starter-theme' ), array( 'span' => array( 'class' => array() ) ) ),
+						the_title( '<span class="screen-reader-text">"', '"</span>', false )
+					) );
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+					wp_link_pages( array(
+						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'acc-starter-theme' ),
+						'after'  => '</div>',
+					) );
+				?>
+			</div><!-- .entry-content -->
 
-		endwhile; // End of the loop.
+			<footer class="entry-footer">
+				<?php acc_starter_theme_entry_footer(); ?>
+			</footer><!-- .entry-footer -->
+		</article><!-- #post-## -->
+
+			
+
+		<?php endwhile; // End of the loop.
 		?>
+
+		<div class="related-posts">
+			<h3>Related Posts</h3>
+		</div><!-- related posts -->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+get_sidebar(); ?>
+</div><!-- wrapper -->
+<?php 
 get_footer();

@@ -17,6 +17,8 @@ textarea {
 */
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
+	font-family: $font__heading;
+
 }
 /*
 
@@ -67,4 +69,34 @@ mark, ins {
 
 big {
 	font-size: 125%;
+}
+.entry-header {
+	& h1 {
+		color: $color-blue;
+		margin: 0 0 15px 0;
+		font: {
+			font-family: $font__heading;
+			size: 24px;
+			weight: 400;
+		}
+		@media screen and (min-width: $tabwidth) {
+			font-size: 28px;
+		}
+		@media screen and (min-width: $tabwidth) {
+			font-size: 30px;
+		}
+	}
+	
+}
+.entry-content {
+	font: {
+		font-family: $font__main;
+		size: 16px;
+	}
+	@media screen and (min-width: $tabwidth) {
+		font-size: 16px;
+	}
+	@media screen and (min-width: $tabwidth) {
+		font-size: 16px;
+	}
 }

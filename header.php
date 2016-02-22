@@ -24,27 +24,35 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'acc-starter-theme' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<?php
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
+	<header id="masthead" class="site-header " role="banner">
 
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
-			endif; ?>
-		</div><!-- .site-branding -->
+		<div class="wrapper">
+
+			<?php if(is_home()) { ?>
+	            <h1 class="logo">
+	            <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
+	            </h1>
+	        <?php } else { ?>
+	            <div class="logo">
+	            <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
+	            </div>
+	        <?php } ?>
+
+	        <div class="donate">
+	        	<a href="<?php bloginfo('url'); ?>/donate">Donate</a>
+	        </div>
+
+	        <div class="site-description"><?php bloginfo('description'); ?></div>
+
+    	</div><!-- wrapper -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<div class="wrapper">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'acc-starter-theme' ); ?></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+			</div><!-- wrapper -->
 		</nav><!-- #site-navigation -->
+
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

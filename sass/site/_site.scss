@@ -16,20 +16,513 @@
 @import "primary/comments";
 
 .wrapper {
+	width: 90%;
+	padding: 0;
+	margin: 0 auto;
+	position: relative;
+	clear: both;
 
+	@media screen and (min-width: $tabwidth) {
+		
+	}
+	@media screen and (min-width: $deskwidth) {
+		width: 1280px;
+		padding: 0;
+	}
 }
+.content-area {
+	width: 100%;
 
+	@media screen and (min-width: $tabwidth) {
+		width: 73%;
+		float: left;
+		margin-top: 80px;
+		border-right: {
+			style: solid;
+			width: 1px;
+			color: #000; 
+		}
+	}
+	@media screen and (min-width: $deskwidth) {
+		
+	}
+}
+.widget-area {
+	width: 100%;
+	font: {
+		font-family: $font__heading;
+		size: 19px;
+		weight: 400;
+	}
+
+	@media screen and (min-width: $tabwidth) {
+		width: 26%;
+    	padding:  0 0 0 3%;
+		float: right;
+		margin-top: 80px;
+		border-left: {
+			style: solid;
+			width: 1px;
+			color: #333; 
+		}
+	}
+	@media screen and (min-width: $deskwidth) {
+		
+	}
+
+	& h2 {
+		color: #000;
+		font: {
+			font-family: $font__heading;
+			size: 19px;
+			weight: 700;
+		}
+		@media screen and (min-width: $tabwidth) {
+			font-size: 19px;
+		}
+		@media screen and (min-width: $tabwidth) {
+			font-size: 19px;
+		}
+	}
+	& h3 {
+		color: #000;
+		font: {
+			font-family: $font__heading;
+			size: 19px;
+			weight: 700;
+		}
+		@media screen and (min-width: $tabwidth) {
+			font-size: 19px;
+		}
+		@media screen and (min-width: $tabwidth) {
+			font-size: 19px;
+		}
+	}
+	& ul {
+		margin: 0 0 30px 0;
+		padding: 0;
+		& li {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			color: #000;
+			font: {
+				font-family: $font__heading;
+				size: 19px;
+				weight: 700;
+			}
+			& a {
+				color: $color-blue;
+				@include transition(all .3s ease);
+				&:hover {
+					color: rgba($color-blue, .6);
+				}
+			}
+			@media screen and (min-width: $tabwidth) {
+				font-size: 19px;
+			}
+			@media screen and (min-width: $tabwidth) {
+				font-size: 19px;
+			}
+	
+		}
+	}
+}
+header#masthead {
+	width: 100%;
+	text-align: center;
+
+	@media screen and (min-width: $tabwidth) {
+		
+	}
+	@media screen and (min-width: $tabwidth) {
+		
+	}
+}
 /* Logo */
 .logo , h1.logo {
-	width: 525px;
-	height: 200px;
-	background-image: url(images/logo.png);	
+	width: 280px;
+	height: 30px;
 	z-index: 1;
-	margin-top: -20px;
+	margin: 20px auto;
+	background: {
+		image: url(images/logo.png);	
+		repeat: no-repeat;
+		size: contain;
+	}
+
+	@media screen and (min-width: $tabwidth) {
+		float: left;
+		margin: 40px 10px;
+		width: 400px;
+		height: 43px;
+	}
+
+	@media screen and (min-width: $deskwidth) {
+		width: 600px;
+		height: 65px;
+		margin: 40px 0 40px 0;
+	}
 }
 .logo a, h1.logo a{
-	width: 525px;
-	height: 200px;
+	width: 280px;
+	height: 30px;
 	display: block;
 	text-indent: -9000px;
+
+	@media screen and (min-width: $tabwidth) {
+		width: 400px;
+		height: 43px;
+	}
+	@media screen and (min-width: $deskwidth) {
+		width: 600px;
+		height: 65px;
+	}
+}
+.donate {
+	width: auto;
+	display: inline-block;
+	text-align: center;
+	margin: 10px auto;
+	& a {
+		background-color: $color-blue;
+		color: #fff;
+		border-radius: 5px;
+		padding: 10px 30px;
+		display: block;
+		text-decoration: none;
+		@include transition(all 0.3s ease);
+		&:hover {
+			padding: 15px 30px 10px 30px;
+		}
+	}
+
+	@media screen and (min-width: $tabwidth) {
+		position: absolute;
+		margin: 0;
+		top: -5px;
+		right: 0px;
+	}
+	@media screen and (min-width: $deskwidth) {
+	}
+}
+.site-description {
+	text-align: center;
+	width: auto;
+	display: inline-block;
+	margin: 10px auto;
+	font: {
+		family: $font__heading;
+		size: 22px;
+	}
+	@media screen and (min-width: $tabwidth) {
+		text-align: right;
+		float: right;
+		margin: 70px 0 0 0;
+	}
+}
+footer.site-footer {
+	background-color: #000;
+	color: #fff;
+	padding: 20px;
+	overflow: hidden;
+	clear:both;
+	font: {
+		size: 18px;
+		family: $font__main;
+	}
+	& h3 {
+		font: {
+			size: 20px;
+			weight: 700;
+			family: $font__heading;
+		}
+	}
+	a {
+		color: #fff;
+		&:hover {
+			color: $color-blue;
+		}
+	}
+	@media screen and (min-width: $tabwidth) {
+		font-size: 14px;
+		
+		& h3 {
+			font-size: 16px;
+		}
+	}
+	@media screen and (min-width: $deskwidth) {
+		padding: 20px 0;
+		font-size: 18px;
+		
+		& h3 {
+			font-size: 20px;
+		}
+	}
+}
+.footer-left {
+	width: 100%;
+	margin: 20px auto;
+	text-align: center;
+
+	@media screen and (min-width: $tabwidth) {
+		width: 45%;
+		float: left;
+		margin: 0;
+		text-align: left;
+	}
+	@media screen and (min-width: $deskwidth) {
+
+	}
+}
+.footer-right {
+	width: 100%;
+	margin: 20px auto;
+	text-align: center;
+
+	@media screen and (min-width: $tabwidth) {
+		width: 45%;
+		float: right;
+		margin: 0;
+		text-align: right;
+	}
+	@media screen and (min-width: $deskwidth) {
+
+	}
+}
+.home-banner {
+	background-color: #000;
+	clear: both;
+}
+.bann-img img {width: 100%;}
+.banner-text {
+	width:auto;
+	color: #fff;
+	text-align: center;
+	padding-bottom: 20px;
+	font: {
+		size: 18px;
+		family: $font__main;
+	}
+	& h2 {
+		font: {
+			size: 28px;
+			weight: 700;
+			family: $font__heading;
+		}
+	}
+	@media screen and (min-width: $tabwidth) {
+		text-align: right;
+		position: absolute;
+		top: 20%;
+		right: 0;
+		font-size: 14px;
+		
+		& h2 {
+			font-size: 24px;
+		}
+	}
+	@media screen and (min-width: $deskwidth) {
+		font-size: 20px;
+		padding-bottom: 0;
+		& h2 {
+			font-size: 31px;
+		}
+	}
+}
+.related-posts {
+	width: 100%;
+	clear: both;
+
+	& h3 {
+		width: 100%;
+		color:$color-blue;
+		border-bottom: 4px solid $color-blue;
+		padding: 5px 0;
+		font: {
+			size: 18px;
+			family: $font__heading;
+		}
+	}
+
+	@media screen and (min-width: $tabwidth) {
+		width: 95%;
+		float: left;
+	}
+}
+.content-block {
+	width: 100%;
+	position: relative;
+	text-align: center;
+	padding-bottom: 80px;
+
+	@media screen and (min-width: $tabwidth) {
+		float: left;
+		width: 28%;
+	}
+	@media screen and (min-width: $tabwidth) {
+
+	}
+	
+	& h2 {
+		width: 100%;
+		text-align: center;
+		color: #fff;
+		background-color: $color-blue;
+		padding: 15px 0;
+		margin: 0 0 25px 0;
+		display: block;
+		float: left;
+		font-size: 24px;
+		font-weight: 400;
+	}
+}
+.block-image {
+	width: 100%;
+	line-height: 0;
+	margin: 0;
+	padding: 0;
+	& img {
+		width: 100%;
+		line-height: 0;
+		margin: 0;
+		padding: 0;
+	}
+}
+.block-left {
+	margin: 10px auto;
+	@media screen and (min-width: $tabwidth) {
+		margin: 0 8% 50px 0;
+	}
+	@media screen and (min-width: $tabwidth) {
+
+	}
+}
+.block-right {
+	margin: 10px auto;
+	@media screen and (min-width: $tabwidth) {
+		margin: 0 0 50px 0;
+	}
+	@media screen and (min-width: $tabwidth) {
+
+	}
+}
+.learnmore {
+	width: auto;
+	display: inline-block;
+	margin: 20px auto;
+	position: relative;
+	& a {
+		padding: 10px 20px;
+		display: inline-block;
+		color: $color-blue;
+		@include transition(all ease 0.3s);
+		border: {
+			color: $color-blue;
+			width: 1px;
+			style: solid;
+		}
+		&:hover {
+			background-color: $color-blue;
+			color: #fff;
+		}
+	}
+	@media screen and (min-width: $tabwidth) {
+		position: absolute;
+		bottom: 10px;
+		right: 0;
+		left: 0;
+	}
+}
+article.articles {
+	width: 100%;
+	position: relative;
+	border-bottom: {
+		style: solid;
+		width: 4px;
+		color: $color-blue;
+	}
+	& h2 {
+		font-size: 19px;
+		& a {
+			color: #000;
+			@include transition(.3s ease all);
+			&:hover {
+				color: $color-blue;
+			}
+		}
+	}
+	@media screen and (min-width: $tabwidth) {
+		float: left;
+		width: 30%;
+	}
+}
+article.first {
+	margin: 10px auto;
+	padding-bottom: 70px;
+
+	@media screen and (min-width: $tabwidth) {
+		margin: 0 3% 30px 0;
+	}
+}
+article.last {
+	margin: 10px auto;
+
+	@media screen and (min-width: $tabwidth) {
+		margin: 0 0 30px 0;
+	}
+}
+article.single {
+	width: 100%;
+	position: relative;
+	
+	& h2 {
+		font-size: 19px;
+		& a {
+			color: #000;
+			@include transition(.3s ease all);
+			&:hover {
+				color: $color-blue;
+			}
+		}
+	}
+	@media screen and (min-width: $tabwidth) {
+		float: left;
+		width: 95%;
+	}
+}
+.date {
+	color: $color-blue;
+	width: 100%;
+	margin: 0 0 15px 0;
+	font: {
+		size: 19px;
+		family: $font__heading;
+	}
+}
+.readmore {
+	width: auto;
+	display: inline-block;
+	margin: 20px auto;
+	position: relative;
+	& a {
+		padding: 10px 20px;
+		display: inline-block;
+		color: $color-blue;
+		@include transition(all ease 0.3s);
+		border: {
+			color: $color-blue;
+			width: 1px;
+			style: solid;
+		}
+		&:hover {
+			background-color: $color-blue;
+			color: #fff;
+		}
+	}
+	@media screen and (min-width: $tabwidth) {
+		position: absolute;
+		bottom: 10px;
+		left: 0;
+	}
 }
