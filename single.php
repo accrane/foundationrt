@@ -9,7 +9,7 @@
 
 get_header(); ?>
 <div class="wrapper">
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area js-main-cols">
 		<main id="main" class="site-main" role="main">
 
 		<?php
@@ -47,11 +47,82 @@ get_header(); ?>
 
 			
 
-		<?php endwhile; // End of the loop.
+		<?php 
+
+		$cat = get_the_category();
+		$slug = $cat[0]->slug;
+		// echo '<pre>';
+		// print_r($cat);
+		endwhile; // End of the loop.
 		?>
 
 		<div class="related-posts">
 			<h3>Related Posts</h3>
+			<?php
+				$i=0;
+				$wp_query = new WP_Query();
+				$wp_query->query(array(
+				'post_type'=>'post',
+				'posts_per_page' => 3,
+				'paged' => $paged,
+				'tax_query' => array(
+					array(
+						'taxonomy' => 'category', // your custom taxonomy
+						'field' => 'slug',
+						'terms' => array( $slug ) // the terms (categories) you created
+					)
+				)
+			));
+				if ($wp_query->have_posts()) : ?>
+			    <?php while ($wp_query->have_posts()) : ?>
+			        
+			    <?php $wp_query->the_post(); 
+			    $i++;
+			    if( $i == 3 ) {
+			    	$class = "last";
+			    	$i=0;
+			    } else {
+			    	$class = 'first';
+			    }
+
+			    ?>
+			    <article id="post-<?php the_ID(); ?>" class="articles <?php echo $class; ?> blocks">
+					<header class="entry-header">
+						<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
+
+						
+						<div class="entry-meta">
+							<div class="date">
+								<?php echo get_the_date(); ?>
+							</div><!-- date -->
+						</div><!-- .entry-meta -->
+						
+					</header><!-- .entry-header -->
+
+					<div class="block-image">
+						<?php if ( has_post_thumbnail() ) { 
+								the_post_thumbnail(); 
+							  } else { 
+							  	echo '<img src="'.get_bloginfo('template_url').'/css/images/default.png" alt="Roundation RT" />';
+							  }
+
+						?>
+					</div><!-- block image -->
+
+					<div class="entry-content">
+						<?php
+							the_excerpt();
+						?>
+					</div><!-- .entry-content -->
+
+					<div class="readmore">
+						<a href="<?php the_permalink(); ?>">Read More</a>
+					</div>
+
+					
+				</article><!-- #post-## -->
+
+			<?php endwhile; endif; ?>
 		</div><!-- related posts -->
 
 		</main><!-- #main -->

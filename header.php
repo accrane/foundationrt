@@ -48,7 +48,12 @@
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<div class="wrapper">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'acc-starter-theme' ); ?></button>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'acc-starter-theme' ); ?>
+				 <span></span>
+				  <span></span>
+				  <span></span>
+				  <span></span>
+				</button><!-- menu toggle -->
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 			</div><!-- wrapper -->
 		</nav><!-- #site-navigation -->

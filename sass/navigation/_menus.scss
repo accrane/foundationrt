@@ -1,7 +1,17 @@
 ul#primary-menu {
-	@media screen and (min-width: $tabwidth) {
+	@media screen and (min-width: $largetab) {
 		display: flex;
 	    justify-content: space-between;
+	}
+}
+.dropdown::after {
+	@media screen and (min-width: $largetab) {
+		content: url(images/dropdown.png);
+		width: 10px;
+		height: 10px;
+		position: absolute;
+		right: -15px;
+		top: 0;
 	}
 }
 .main-navigation {
@@ -23,18 +33,17 @@ ul#primary-menu {
 		ul {
 			background-color: $color-blue;
 			float: left;
-			position: absolute;
-			top: 1.5em;
-			left: -999em;
+			
 			z-index: 99999;
 
 			ul {
 				left: -999em;
 				top: 0;
+				
 			}
 
 			li {
-				text-align: left;
+				text-align: center;
 
 				&:hover > ul,
 				&.focus > ul {
@@ -43,8 +52,9 @@ ul#primary-menu {
 			}
 
 			a {
-				width: 200px;
-				padding: 10px 5px;
+				
+				width: auto;
+				padding: 10px 10px;
 				background-color: rgba(255,255,255,0);
 				@include transition(all ease 0.3s);
 			}
@@ -68,6 +78,7 @@ ul#primary-menu {
 		float: left;
 		position: relative;
 		font-size: 16px;
+		width: 100%;
 
 		&:hover > a,
 		&.focus > a {
@@ -88,15 +99,116 @@ ul#primary-menu {
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
 	}
+	@media screen and (min-width: $tabwidth) {
+		
+		li {
+			font-size: 22px;
+			width: 100%;
+		}
+		ul {
+			ul {
+				margin: 5px auto 20px auto;
+				ul {
+					
+				}
+				li {
+					font-size: 14px;
+
+				}
+				a {
+					
+
+				}
+			}
+		}
+		
+	}
+	@media screen and (min-width: $midwidth) {
+		
+		
+		
+		
+	}
+
+	@media screen and (min-width: $largetab) {
+		
+		li {
+			font-size: 14px;
+			width: auto;
+		}
+		
+		ul {
+			ul {
+				position: absolute;
+				top: 1.5em;
+				left: -999em;
+				margin: 0 auto;
+				
+				ul {
+					
+				}
+				li {
+					text-align: left;
+				}
+				a {
+					width: 250px;
+
+				}
+			}
+		}
+		
+	}
+	@media screen and (min-width: $deskwidth) {
+		li {
+			font-size: 16px;
+			width: auto;
+		}
+		ul {
+			ul {
+				li {
+					text-align: left;
+				}
+			}
+		}
+	}
 }
 
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
+	
+	
+	border: 0;
+    box-shadow:none;
+    background:none;
+    text-shadow:none;
+    color: #fff;
+    
+}
+.menu-toggle {
+	width: auto;
+	font-size: 22px;
+	margin: 0 auto;
+	border: 1px solid #fff;
+	padding: 10px 20px;
+	&:hover {
+		box-shadow:none;
+	}
+	&.active {
+		outline: none;
+		box-shadow:none;
+		background-color: rgba(255,255,255,.3);
+	}
+}
+.main-navigation.toggled ul {
+	width: 100%;
+	@media screen and (min-width: $largetab) {
+    	width: auto;
+    }
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: $largetab) {
 	.menu-toggle {
 		display: none;
 	}

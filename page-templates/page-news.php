@@ -9,8 +9,12 @@
 
 get_header(); ?>
 <div class="wrapper">
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area js-main-cols">
 		<main id="main" class="site-main" role="main">
+
+			<header class="entry-header">
+				<h1><?php the_title(); ?></h1>
+			</header >
 
 			<?php
 				$i=0;
@@ -34,9 +38,9 @@ get_header(); ?>
 
 			    ?>
 
-			    <article id="post-<?php the_ID(); ?>" class="articles <?php echo $class; ?> blocks">
+			    <article id="post-<?php the_ID(); ?>" class="articles <?php echo $class; ?> js-blocks">
 					<header class="entry-header">
-						<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
+						<?php the_title( '<h2 class="entry-title js-art-titles"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
 
 						
 						<div class="entry-meta">
@@ -47,11 +51,15 @@ get_header(); ?>
 						
 					</header><!-- .entry-header -->
 
-					<?php if ( has_post_thumbnail() ) { ?>
-	    				<div class="block-image">
-							<?php the_post_thumbnail(); ?>
-						</div>
-					<?php } ?>
+					<div class="block-image">
+						<?php if ( has_post_thumbnail() ) { 
+								the_post_thumbnail(); 
+							  } else { 
+							  	echo '<img src="'.get_bloginfo('template_url').'/css/images/default.png" alt="Roundation RT" />';
+							  }
+
+						?>
+					</div><!-- block image -->
 
 					<div class="entry-content">
 						<?php

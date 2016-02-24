@@ -330,6 +330,23 @@ big {
     .entry-content {
       font-size: 16px; } }
 
+article,
+.content-area,
+.widget-area,
+.content-area-full {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto; }
+
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -503,13 +520,25 @@ a {
   a:hover, a:active {
     outline: 0; }
 
+button:focus {
+  outline: 0; }
+
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 1040px) {
   ul#primary-menu {
     display: flex;
     justify-content: space-between; } }
+
+@media screen and (min-width: 1040px) {
+  .dropdown::after {
+    content: url(images/dropdown.png);
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: -15px;
+    top: 0; } }
 
 .main-navigation {
   clear: both;
@@ -527,20 +556,17 @@ a {
     .main-navigation ul ul {
       background-color: #25547f;
       float: left;
-      position: absolute;
-      top: 1.5em;
-      left: -999em;
       z-index: 99999; }
       .main-navigation ul ul ul {
         left: -999em;
         top: 0; }
       .main-navigation ul ul li {
-        text-align: left; }
+        text-align: center; }
         .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
           left: 100%; }
       .main-navigation ul ul a {
-        width: 200px;
-        padding: 10px 5px;
+        width: auto;
+        padding: 10px 10px;
         background-color: rgba(255, 255, 255, 0);
         -webkit-transition: all ease 0.3s;
         -moz-transition: all ease 0.3s;
@@ -554,7 +580,8 @@ a {
   .main-navigation li {
     float: left;
     position: relative;
-    font-size: 16px; }
+    font-size: 16px;
+    width: 100%; }
   .main-navigation a {
     display: block;
     text-decoration: none;
@@ -564,13 +591,64 @@ a {
     transition: all ease 0.3s; }
     .main-navigation a:hover {
       color: rgba(255, 255, 255, 0.7); }
+  @media screen and (min-width: 600px) {
+    .main-navigation li {
+      font-size: 22px;
+      width: 100%; }
+    .main-navigation ul ul {
+      margin: 5px auto 20px auto; }
+      .main-navigation ul ul li {
+        font-size: 14px; } }
+  @media screen and (min-width: 1040px) {
+    .main-navigation li {
+      font-size: 14px;
+      width: auto; }
+    .main-navigation ul ul {
+      position: absolute;
+      top: 1.5em;
+      left: -999em;
+      margin: 0 auto; }
+      .main-navigation ul ul li {
+        text-align: left; }
+      .main-navigation ul ul a {
+        width: 250px; } }
+  @media screen and (min-width: 1300px) {
+    .main-navigation li {
+      font-size: 16px;
+      width: auto; }
+    .main-navigation ul ul li {
+      text-align: left; } }
 
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
-  display: block; }
+  display: block;
+  border: 0;
+  box-shadow: none;
+  background: none;
+  text-shadow: none;
+  color: #fff; }
 
-@media screen and (min-width: 37.5em) {
+.menu-toggle {
+  width: auto;
+  font-size: 22px;
+  margin: 0 auto;
+  border: 1px solid #fff;
+  padding: 10px 20px; }
+  .menu-toggle:hover {
+    box-shadow: none; }
+  .menu-toggle.active {
+    outline: none;
+    box-shadow: none;
+    background-color: rgba(255, 255, 255, 0.3); }
+
+.main-navigation.toggled ul {
+  width: 100%; }
+  @media screen and (min-width: 1040px) {
+    .main-navigation.toggled ul {
+      width: auto; } }
+
+@media screen and (min-width: 1040px) {
   .menu-toggle {
     display: none; }
 
@@ -711,6 +789,9 @@ a {
   clear: both;
   margin: 0 0 1.5em; }
 
+#primary {
+  clear: both; }
+
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/
@@ -739,18 +820,24 @@ a {
       padding: 0; } }
 
 .content-area {
-  width: 100%; }
+  width: 100%;
+  float: left; }
   @media screen and (min-width: 600px) {
     .content-area {
-      width: 73%;
-      float: left;
-      margin-top: 80px;
-      border-right-style: solid;
-      border-right-width: 1px;
-      border-right-color: #000; } }
+      width: 70%;
+      margin: 80px 0 80px 0; } }
+
+.content-area-full {
+  width: 100%;
+  float: left; }
+  @media screen and (min-width: 600px) {
+    .content-area-full {
+      margin: 80px 0 80px 0; } }
 
 .widget-area {
   width: 100%;
+  position: relative;
+  margin-bottom: 30px;
   font-font-family: "PT Serif", serif;
   font-size: 19px;
   font-weight: 400; }
@@ -759,10 +846,17 @@ a {
       width: 26%;
       padding: 0 0 0 3%;
       float: right;
-      margin-top: 80px;
-      border-left-style: solid;
-      border-left-width: 1px;
-      border-left-color: #333; } }
+      margin: 80px 0 40px 0;
+      border-left: 1px solid #333; }
+      .widget-area:before {
+        width: auto;
+        content: " ";
+        position: absolute;
+        z-index: -1;
+        left: 5px;
+        top: 0;
+        bottom: 0;
+        border-left: 1px solid #333; } }
   .widget-area h2 {
     color: #000;
     font-font-family: "PT Serif", serif;
@@ -880,11 +974,16 @@ header#masthead {
   margin: 10px auto;
   font-family: "PT Serif", serif;
   font-size: 22px; }
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 1040px) {
     .site-description {
+      font-size: 20px;
       text-align: right;
       float: right;
-      margin: 70px 0 0 0; } }
+      margin: 70px 0 0 0;
+      font-size: 18px; } }
+  @media screen and (min-width: 1300px) {
+    .site-description {
+      font-size: 22px; } }
 
 footer.site-footer {
   background-color: #000;
@@ -938,7 +1037,8 @@ footer.site-footer {
 
 .home-banner {
   background-color: #000;
-  clear: both; }
+  clear: both;
+  margin: 0 0 50px 0; }
 
 .bann-img img {
   width: 100%; }
@@ -1010,7 +1110,10 @@ footer.site-footer {
   width: 100%;
   line-height: 0;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ccc; }
   .block-image img {
     width: 100%;
     line-height: 0;

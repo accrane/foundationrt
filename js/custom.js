@@ -41,7 +41,9 @@ jQuery(document).ready(function ($) {
 	
 	
 	// Equal heights divs
-	$('.blocks').matchHeight();
+	$('.js-blocks').matchHeight();
+	$('.js-main-cols').matchHeight();
+	$('.js-art-titles').matchHeight();
 	/*var byRow = $('body').hasClass('test-rows');
 		$('.blocks-container').each(function() {
 		 $(this).children('.blocks').matchHeight({

@@ -32,16 +32,22 @@
 }
 .content-area {
 	width: 100%;
+	float: left;
 
 	@media screen and (min-width: $tabwidth) {
-		width: 73%;
-		float: left;
-		margin-top: 80px;
-		border-right: {
-			style: solid;
-			width: 1px;
-			color: #000; 
-		}
+		width: 70%;
+		margin: 80px 0 80px 0;
+	}
+	@media screen and (min-width: $deskwidth) {
+		
+	}
+}
+.content-area-full {
+	width: 100%;
+	float: left;
+
+	@media screen and (min-width: $tabwidth) {
+		margin: 80px 0 80px 0;
 	}
 	@media screen and (min-width: $deskwidth) {
 		
@@ -49,21 +55,30 @@
 }
 .widget-area {
 	width: 100%;
+	position: relative;
+	margin-bottom: 30px;
 	font: {
 		font-family: $font__heading;
 		size: 19px;
 		weight: 400;
 	}
+	
 
 	@media screen and (min-width: $tabwidth) {
 		width: 26%;
     	padding:  0 0 0 3%;
 		float: right;
-		margin-top: 80px;
-		border-left: {
-			style: solid;
-			width: 1px;
-			color: #333; 
+		margin: 80px 0 40px 0;
+		border-left: 1px solid #333;
+		&:before {
+		  width: auto;
+		  content: " ";
+		  position: absolute;
+		  z-index: -1;
+		  left: 5px;
+		  top: 0;
+		  bottom: 0;
+		  border-left: 1px solid #333;
 		}
 	}
 	@media screen and (min-width: $deskwidth) {
@@ -216,9 +231,17 @@ header#masthead {
 		size: 22px;
 	}
 	@media screen and (min-width: $tabwidth) {
+		
+	}
+	@media screen and (min-width: $largetab) {
+		font-size: 20px;
 		text-align: right;
 		float: right;
 		margin: 70px 0 0 0;
+		font-size: 18px;
+	}
+	@media screen and (min-width: $deskwidth) {
+		font-size: 22px;
 	}
 }
 footer.site-footer {
@@ -293,6 +316,7 @@ footer.site-footer {
 .home-banner {
 	background-color: #000;
 	clear: both;
+	margin: 0 0 50px 0;
 }
 .bann-img img {width: 100%;}
 .banner-text {
@@ -382,6 +406,11 @@ footer.site-footer {
 	line-height: 0;
 	margin: 0;
 	padding: 0;
+	border: {
+		width: 1px;
+		style: solid;
+		color: #ccc;
+	}
 	& img {
 		width: 100%;
 		line-height: 0;
