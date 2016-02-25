@@ -9,7 +9,7 @@
 
 get_header(); ?>
 <div class="wrapper">
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area js-main-cols">
 		<main id="main" class="site-main" role="main">
 
 			
@@ -22,29 +22,31 @@ get_header(); ?>
 					</header><!-- .entry-header -->
 
 					<div class="entry-content">
-						<?php
-							the_content();
+						<?php the_content();?>
 
-							wp_link_pages( array(
-								'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'acc-starter-theme' ),
-								'after'  => '</div>',
-							) );
-						?>
+
+						<div class="seminars">
+						<?php if(have_rows('seminars')) : while(have_rows('seminars')): the_row();
+
+								$year = get_sub_field('year');
+								$pdf = get_sub_field('seminar_pdf');
+						 ?>
+
+
+							 <div class="seminar">
+							 	<a target="_blank" href="<?php echo $pdf; ?>">
+							 		<span class="download">Seminars in <?php echo $year; ?></span>
+							 	</a>
+							 </div><!-- seminar -->
+
+						<?php endwhile; endif; ?>
+						</div><!-- seminars -->
+
+
+
 					</div><!-- .entry-content -->
 
-					<footer class="entry-footer">
-						<?php
-							edit_post_link(
-								sprintf(
-									/* translators: %s: Name of current post */
-									esc_html__( 'Edit %s', 'acc-starter-theme' ),
-									the_title( '<span class="screen-reader-text">"', '"</span>', false )
-								),
-								'<span class="edit-link">',
-								'</span>'
-							);
-						?>
-					</footer><!-- .entry-footer -->
+					
 				</article><!-- #post-## -->
 
 			<?php endwhile; ?>
@@ -54,7 +56,7 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<div class="widget-area">
+<div class="widget-area js-main-cols">
 <?php
 /*
 	Random Story Post
@@ -69,11 +71,28 @@ get_header(); ?>
 ));
 	if ($wp_query->have_posts()) : ?>
 	<div class="side-story">
-    <?php while ($wp_query->have_posts()) : $wp_query->the_post();  ?>
+    <?php while ($wp_query->have_posts()) : $wp_query->the_post(); 
 
-    <?php the_title(); ?>
-    <?php the_excerpt(); ?>
+    	$name = get_field('name');
 
+     ?>
+
+	    <h2>
+	    	Stories From the Front
+	    </h2>
+
+	    <?php if($name != '') { ?>
+	    	<div class="date"><?php echo $name; ?></div>
+	    <?php } ?>
+	    <h3>
+	    	<?php the_title(); ?>
+	    </h3>
+
+	    <?php the_excerpt(); ?>
+
+	    <div class="readmore">
+	    	<a href="<?php the_permalink(); ?>">Read More</a>
+	    </div>
 
    <?php endwhile; ?>
 </div><!-- side story -->
@@ -102,8 +121,17 @@ get_header(); ?>
 	<div class="side-story">
     <?php while ($wp_query->have_posts()) :  $wp_query->the_post(); ?>
 
-    <?php the_title(); ?>
-    <?php the_excerpt(); ?>
+	   	<h2>
+	    	<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+	    </h2>
+
+	    <div class="date"><?php echo get_the_date(); ?></div>
+
+	    <?php the_excerpt(); ?>
+
+	    <div class="readmore">
+	    	<a href="<?php the_permalink(); ?>">Read More</a>
+	    </div>
 
 
    <?php endwhile; ?>

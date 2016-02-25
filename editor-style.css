@@ -1,0 +1,13 @@
+@import url(https://fonts.googleapis.com/css?family=PT+Serif:400,700);
+.editor-button {
+	font-family: font-family: 'PT Sans', sans-serif;
+	font-size: 19px;
+	font-weight: 400;
+	padding: 10px 20px;
+	text-align: center;
+	color: rgb(37,84,127);
+	width: auto;
+	display; inline-block;
+	float: left;
+	border: 1px solid rgb(37,84,127);
+}

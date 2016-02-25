@@ -93,6 +93,36 @@ big {
 		font-family: $font__main;
 		size: 16px;
 	}
+	h2 {
+		font: {
+			size: 19px;
+			weight: 700;
+		}
+	}
+	h3 {
+		font: {
+			size: 17px;
+			weight: 700;
+		}
+	}
+	h4 {
+		font: {
+			size: 16px;
+			weight: 700;
+		}
+	}
+	h5 {
+		font: {
+			size: 14px;
+			weight: 700;
+		}
+	}
+	h6 {
+		font: {
+			size: 12px;
+			weight: 700;
+		}
+	}
 	@media screen and (min-width: $tabwidth) {
 		font-size: 16px;
 	}
@@ -119,4 +149,22 @@ article,
   -moz-hyphens: auto;
   -webkit-hyphens: auto;
   hyphens: auto;
+}
+
+.editor-button {
+	font: {
+		family: $font__heading;
+		size: 19px;
+		weight: 400;
+	}
+	padding: 10px 20px;
+	text-align: center;
+	color: $color-blue;
+	width: auto;
+	display: inline-block;
+	float: left;
+	border: 1px solid $color-blue;
+	a {
+		display: block;
+	}
 }

@@ -323,6 +323,21 @@ big {
 .entry-content {
   font-font-family: "Open Sans", sans-serif;
   font-size: 16px; }
+  .entry-content h2 {
+    font-size: 19px;
+    font-weight: 700; }
+  .entry-content h3 {
+    font-size: 17px;
+    font-weight: 700; }
+  .entry-content h4 {
+    font-size: 16px;
+    font-weight: 700; }
+  .entry-content h5 {
+    font-size: 14px;
+    font-weight: 700; }
+  .entry-content h6 {
+    font-size: 12px;
+    font-weight: 700; }
   @media screen and (min-width: 600px) {
     .entry-content {
       font-size: 16px; } }
@@ -346,6 +361,20 @@ article,
   -moz-hyphens: auto;
   -webkit-hyphens: auto;
   hyphens: auto; }
+
+.editor-button {
+  font-family: "PT Serif", serif;
+  font-size: 19px;
+  font-weight: 400;
+  padding: 10px 20px;
+  text-align: center;
+  color: #25547f;
+  width: auto;
+  display: inline-block;
+  float: left;
+  border: 1px solid #25547f; }
+  .editor-button a {
+    display: block; }
 
 /*--------------------------------------------------------------
 # Elements
@@ -816,7 +845,6 @@ button:focus {
   clear: both; }
   @media screen and (min-width: 1300px) {
     .wrapper {
-      width: 1280px;
       padding: 0; } }
 
 .content-area {
@@ -841,6 +869,31 @@ button:focus {
   font-font-family: "PT Serif", serif;
   font-size: 19px;
   font-weight: 400; }
+  .widget-area li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    color: #000;
+    font-font-family: "PT Serif", serif;
+    font-size: 19px;
+    font-weight: 400; }
+    .widget-area li a {
+      color: #25547f;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
+      .widget-area li a:hover {
+        color: rgba(37, 84, 127, 0.6); }
+    .widget-area li:hover {
+      font-weight: 700; }
+    @media screen and (min-width: 600px) {
+      .widget-area li {
+        font-size: 19px; } }
+    @media screen and (min-width: 600px) {
+      .widget-area li {
+        font-size: 19px; } }
+  .widget-area p {
+    font-size: 16px; }
   @media screen and (min-width: 600px) {
     .widget-area {
       width: 26%;
@@ -853,7 +906,7 @@ button:focus {
         content: " ";
         position: absolute;
         z-index: -1;
-        left: 5px;
+        left: 3px;
         top: 0;
         bottom: 0;
         border-left: 1px solid #333; } }
@@ -1237,6 +1290,52 @@ article.single {
       position: absolute;
       bottom: 10px;
       left: 0; } }
+
+.seminars {
+  width: 100%;
+  clear: both;
+  border: 1px solid #25547f;
+  overflow: hidden; }
+
+.seminar {
+  width: 90%;
+  margin: 10px auto;
+  text-align: center;
+  position: relative; }
+  .seminar a {
+    width: 100%;
+    display: block;
+    border: 1px solid #25547f;
+    background-color: rgba(37, 84, 127, 0);
+    padding: 10px 0;
+    -webkit-animation-fill-mode: backwards;
+    -moz-animation-fill-mode: backwards;
+    animation-fill-mode: backwards; }
+    .seminar a:hover {
+      background-color: rgba(37, 84, 127, 0.8);
+      color: #fff; }
+  .seminar .download {
+    padding: 0;
+    position: relative; }
+    .seminar .download::before {
+      content: url(images/download.png);
+      width: 10px;
+      height: 12px;
+      position: absolute;
+      left: -15px;
+      top: 0; }
+  @media screen and (min-width: 600px) {
+    .seminar {
+      width: 33.3333333%;
+      float: left;
+      margin: 0; } }
+
+.side-story {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 80px;
+  border-bottom: 4px solid #25547f; }
 
 /*--------------------------------------------------------------
 # Infinite scroll
