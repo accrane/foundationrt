@@ -82,7 +82,7 @@ get_header(); ?>
 
 		?>
     
-		<div class="content-block block-left blocks">
+		<div class="content-block block-left js-blocks">
 			<div class="block-image">
 				<img src="<?php echo $thumbOne; ?>" alt="<?php echo $altOne; ?>" title="<?php echo $titleOne; ?>" />
 			</div>
