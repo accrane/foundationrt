@@ -643,7 +643,7 @@ button:focus {
         width: 250px; } }
   @media screen and (min-width: 1300px) {
     .main-navigation li {
-      font-size: 16px;
+      font-size: 17px;
       width: auto; }
     .main-navigation ul ul li {
       text-align: left; } }
@@ -1168,6 +1168,17 @@ footer.site-footer {
   border-style: solid;
   border-color: #ccc; }
   .block-image img {
+    width: 100%;
+    line-height: 0;
+    margin: 0;
+    padding: 0; }
+
+.block-image-no-border {
+  width: 100%;
+  line-height: 0;
+  margin: 0;
+  padding: 0; }
+  .block-image-no-border img {
     width: 100%;
     line-height: 0;
     margin: 0;

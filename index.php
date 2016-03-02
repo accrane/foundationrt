@@ -83,7 +83,7 @@ get_header(); ?>
 		?>
     
 		<div class="content-block block-left js-blocks">
-			<div class="block-image">
+			<div class="block-image-no-border ">
 				<img src="<?php echo $thumbOne; ?>" alt="<?php echo $altOne; ?>" title="<?php echo $titleOne; ?>" />
 			</div>
 			<h2><?php the_title(); ?></h2>
@@ -117,7 +117,7 @@ get_header(); ?>
 		?>
     
 		<div class="content-block block-left js-blocks">
-			<div class="block-image">
+			<div class="block-image-no-border ">
 				<img src="<?php echo $thumbTwo; ?>" alt="<?php echo $altTwo; ?>" title="<?php echo $titleTwo; ?>" />
 			</div>
 			<h2><?php the_title(); ?></h2>
@@ -151,7 +151,7 @@ get_header(); ?>
 		?>
     
 		<div class="content-block block-right js-blocks">
-			<div class="block-image">
+			<div class="block-image-no-border ">
 				<img src="<?php echo $thumbThree ?>" alt="<?php echo $altThree; ?>" title="<?php echo $titleThree; ?>" />
 			</div>
 			<h2><?php the_title(); ?></h2>

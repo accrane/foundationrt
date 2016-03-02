@@ -449,6 +449,19 @@ footer.site-footer {
 		padding: 0;
 	}
 }
+.block-image-no-border {
+	width: 100%;
+	line-height: 0;
+	margin: 0;
+	padding: 0;
+	
+	& img {
+		width: 100%;
+		line-height: 0;
+		margin: 0;
+		padding: 0;
+	}
+}
 .block-left {
 	margin: 10px auto;
 	@media screen and (min-width: $tabwidth) {
