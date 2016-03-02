@@ -26,7 +26,7 @@ $sitemap = get_field('sitemap_link', 'option');
 			<div class="footer-right">
 				<div class="footer-email">
 					<h3>
-						<a href="http://visitor.constantcontact.com/manage/optin?v=001l-FZeZKC-P-q2RjvRzQDDU_YVKo1BEzuNKSfXZAMPtw35Uu4apkgmeC7ssdGmwy73dyKIiC12xGseaUXg5ClE38rwHG0w4mtsfbtBqViXrE%3D">Join Our Mailing List</a>
+						<a target="_blank" href="http://visitor.constantcontact.com/manage/optin?v=001l-FZeZKC-P-q2RjvRzQDDU_YVKo1BEzuNKSfXZAMPtw35Uu4apkgmeC7ssdGmwy73dyKIiC12xGseaUXg5ClE38rwHG0w4mtsfbtBqViXrE%3D">Join Our Mailing List</a>
 					</h3>
 				</div><!-- footer-email -->
 				<div class="creds">
