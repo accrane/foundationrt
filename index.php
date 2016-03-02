@@ -116,7 +116,7 @@ get_header(); ?>
 
 		?>
     
-		<div class="content-block block-left blocks">
+		<div class="content-block block-left js-blocks">
 			<div class="block-image">
 				<img src="<?php echo $thumbTwo; ?>" alt="<?php echo $altTwo; ?>" title="<?php echo $titleTwo; ?>" />
 			</div>
@@ -150,7 +150,7 @@ get_header(); ?>
 
 		?>
     
-		<div class="content-block block-right blocks">
+		<div class="content-block block-right js-blocks">
 			<div class="block-image">
 				<img src="<?php echo $thumbThree ?>" alt="<?php echo $altThree; ?>" title="<?php echo $titleThree; ?>" />
 			</div>

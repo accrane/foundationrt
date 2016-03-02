@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Seminars
+ * Template Name: Donate
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -26,16 +26,16 @@ get_header(); ?>
 
 
 						<div class="seminars">
-						<?php if(have_rows('seminars')) : while(have_rows('seminars')): the_row();
+						<?php if(have_rows('honoring')) : while(have_rows('honoring')): the_row();
 
 								$year = get_sub_field('year');
-								$pdf = get_sub_field('seminar_pdf');
+								$pdf = get_sub_field('honoring_pdf');
 						 ?>
 
 
 							 <div class="seminar">
 							 	<a target="_blank" href="<?php echo $pdf; ?>">
-							 		<span class="download">Seminars in <?php echo $year; ?></span>
+							 		<span class="download">Honoring Donors for <?php echo $year; ?></span>
 							 	</a>
 							 </div><!-- seminar -->
 
