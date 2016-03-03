@@ -1316,6 +1316,28 @@ article.single {
       bottom: 10px;
       left: 0; } }
 
+.organization {
+  width: 100%;
+  display: inline-block;
+  margin: 10px auto;
+  position: relative;
+  float: left;
+  font-family: "PT Serif", serif; }
+  .organization a {
+    width: 100%;
+    padding: 5%;
+    display: inline-block;
+    color: #25547f;
+    -webkit-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+    border-color: #25547f;
+    border-width: 1px;
+    border-style: solid; }
+    .organization a:hover {
+      background-color: #25547f;
+      color: #fff; }
+
 .seminars {
   width: 100%;
   clear: both;

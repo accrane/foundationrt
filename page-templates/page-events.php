@@ -83,13 +83,33 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 			<?php pagi_posts_nav(); ?>
-		<?php endif; ?>
+		<?php endif; 
+				wp_reset_query();
+		?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php
-get_sidebar(); ?>
-</div>
+<div class="widget-area">
+	<div class="widget">
+		<h3>Organizations of Interest</h3>
+	<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
+		<?php if(have_rows('organizations_of_interest')) : 
+		while(have_rows('organizations_of_interest')) : 
+			the_row(); 
+			$organization = get_sub_field('organization');
+			$link = get_sub_field('link');
+		?>
+
+		<div class="organization">
+			<a href="<?php echo $link; ?>"><?php echo $organization; ?></a>
+		</div><!-- organization -->
+
+	<?php endwhile; endif; ?>
+<?php endwhile; endif; ?>
+</div><!-- widget -->
+</div><!-- widget area -->
+
+</div><!-- wrapper -->
 <?php
 get_footer();
