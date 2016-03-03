@@ -102,7 +102,7 @@ get_header(); ?>
 		?>
 
 		<div class="organization">
-			<a href="<?php echo $link; ?>"><?php echo $organization; ?></a>
+			<a target="_blank" href="<?php echo $link; ?>"><?php echo $organization; ?></a>
 		</div><!-- organization -->
 
 	<?php endwhile; endif; ?>
