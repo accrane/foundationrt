@@ -307,17 +307,20 @@ mark, ins {
 big {
   font-size: 125%; }
 
-.entry-header h1 {
+.page .entry-header h1,
+.pageheading {
   color: #25547f;
   margin: 0 0 15px 0;
   font-font-family: "PT Serif", serif;
   font-size: 24px;
   font-weight: 400; }
   @media screen and (min-width: 600px) {
-    .entry-header h1 {
+    .page .entry-header h1,
+    .pageheading {
       font-size: 28px; } }
   @media screen and (min-width: 600px) {
-    .entry-header h1 {
+    .page .entry-header h1,
+    .pageheading {
       font-size: 30px; } }
 
 .entry-content {
@@ -344,6 +347,12 @@ big {
   @media screen and (min-width: 600px) {
     .entry-content {
       font-size: 16px; } }
+
+.entry-meta {
+  font-font-family: "PT Serif", serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #25547f; }
 
 article,
 .content-area,
@@ -485,7 +494,9 @@ input[type="color"],
 textarea {
   color: #666;
   border: 1px solid #ccc;
-  border-radius: 3px; }
+  border-radius: 3px;
+  font-size: 12px;
+  font-size: 0.75rem; }
   input[type="text"]:focus,
   input[type="email"]:focus,
   input[type="url"]:focus,
@@ -866,31 +877,35 @@ button:focus {
   width: 100%;
   position: relative;
   margin-bottom: 30px;
-  font-font-family: "PT Serif", serif;
+  font-family: "PT Serif", serif;
   font-size: 19px;
   font-weight: 400; }
-  .widget-area li {
+  .widget-area ul {
+    margin: 0 0 30px 0;
+    padding: 0; }
+    .widget-area ul li {
+      color: #25547f; }
+  .widget-area ul li, .widget-area li {
     padding: 0;
     margin: 0;
     list-style: none;
-    color: #000;
-    font-font-family: "PT Serif", serif;
+    font-family: "PT Serif", serif;
     font-size: 19px;
     font-weight: 400; }
-    .widget-area li a {
+    .widget-area ul li a, .widget-area li a {
       color: #25547f;
       -webkit-transition: all 0.3s ease;
       -moz-transition: all 0.3s ease;
       transition: all 0.3s ease; }
-      .widget-area li a:hover {
+      .widget-area ul li a:hover, .widget-area li a:hover {
         color: rgba(37, 84, 127, 0.6); }
-    .widget-area li:hover {
+    .widget-area ul li:hover, .widget-area li:hover {
       font-weight: 700; }
     @media screen and (min-width: 600px) {
-      .widget-area li {
+      .widget-area ul li, .widget-area li {
         font-size: 19px; } }
     @media screen and (min-width: 600px) {
-      .widget-area li {
+      .widget-area ul li, .widget-area li {
         font-size: 19px; } }
   .widget-area p {
     font-size: 16px; }
@@ -932,30 +947,6 @@ button:focus {
     @media screen and (min-width: 600px) {
       .widget-area h3 {
         font-size: 19px; } }
-  .widget-area ul {
-    margin: 0 0 30px 0;
-    padding: 0; }
-    .widget-area ul li {
-      padding: 0;
-      margin: 0;
-      list-style: none;
-      color: #000;
-      font-font-family: "PT Serif", serif;
-      font-size: 19px;
-      font-weight: 700; }
-      .widget-area ul li a {
-        color: #25547f;
-        -webkit-transition: all 0.3s ease;
-        -moz-transition: all 0.3s ease;
-        transition: all 0.3s ease; }
-        .widget-area ul li a:hover {
-          color: rgba(37, 84, 127, 0.6); }
-      @media screen and (min-width: 600px) {
-        .widget-area ul li {
-          font-size: 19px; } }
-      @media screen and (min-width: 600px) {
-        .widget-area ul li {
-          font-size: 19px; } }
 
 header#masthead {
   width: 100%;
@@ -1088,6 +1079,9 @@ footer.site-footer {
       margin: 0;
       text-align: right; } }
 
+.footer-email {
+  margin-bottom: 40px; }
+
 .home-banner {
   background-color: #000;
   clear: both;
@@ -1138,6 +1132,17 @@ footer.site-footer {
       width: 95%;
       float: left; } }
 
+h2.reform-title {
+  width: 100%;
+  clear: both;
+  margin: 20px auto 40px auto;
+  overflow: hidden;
+  color: #25547f;
+  text-align: center;
+  font-family: "PT Serif", serif;
+  font-size: 30px;
+  font-weight: 400; }
+
 .content-block {
   width: 100%;
   position: relative;
@@ -1158,6 +1163,12 @@ footer.site-footer {
     float: left;
     font-size: 24px;
     font-weight: 400; }
+    @media screen and (min-width: 600px) {
+      .content-block h2 {
+        font-size: 18px; } }
+    @media screen and (min-width: 1300px) {
+      .content-block h2 {
+        font-size: 24px; } }
 
 .block-image {
   width: 100%;
@@ -1200,7 +1211,8 @@ footer.site-footer {
   width: auto;
   display: inline-block;
   margin: 20px auto;
-  position: relative; }
+  position: relative;
+  font-family: "PT Serif", serif; }
   .learnmore a {
     padding: 10px 20px;
     display: inline-block;
@@ -1249,7 +1261,8 @@ article.first {
       margin: 0 3% 30px 0; } }
 
 article.last {
-  margin: 10px auto; }
+  margin: 10px auto;
+  padding-bottom: 70px; }
   @media screen and (min-width: 600px) {
     article.last {
       margin: 0 0 30px 0; } }
@@ -1282,7 +1295,8 @@ article.single {
   width: auto;
   display: inline-block;
   margin: 20px auto;
-  position: relative; }
+  position: relative;
+  font-family: "PT Serif", serif; }
   .readmore a {
     padding: 10px 20px;
     display: inline-block;

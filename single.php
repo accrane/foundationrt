@@ -12,6 +12,8 @@ get_header(); ?>
 	<div id="primary" class="content-area js-main-cols">
 		<main id="main" class="site-main" role="main">
 
+			<header class="pageheading">News & Announcements</header>
+
 		<?php
 		while ( have_posts() ) : the_post(); ?>
 
@@ -20,7 +22,7 @@ get_header(); ?>
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 				
 				<div class="entry-meta">
-					<?php acc_starter_theme_posted_on(); ?>
+					Posted on <?php echo get_the_date(); ?>
 				</div><!-- .entry-meta -->
 				
 			</header><!-- .entry-header -->
@@ -86,9 +88,9 @@ get_header(); ?>
 			    }
 
 			    ?>
-			    <article id="post-<?php the_ID(); ?>" class="articles <?php echo $class; ?> blocks">
-					<header class="entry-header">
-						<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
+			    <article id="post-<?php the_ID(); ?>" class="articles <?php echo $class; ?> js-blocks">
+					<header class="entry-header ">
+						<?php the_title( '<h2 class="entry-title js-titles"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
 
 						
 						<div class="entry-meta">

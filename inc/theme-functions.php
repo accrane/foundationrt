@@ -14,10 +14,10 @@ set_post_thumbnail_size( 624, 9999 ); // Unlimited height, soft crop
 function my_login_logo() { ?>
 <style type="text/css">
   body.login div#login h1 a {
-  	background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png);
-  	background-size: 327px 67px;
-  	width: 327px;
-  	height: 67px;
+  	background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/css/images/logo.png);
+  	background-size: 280px 30px;
+  	width: 280px;
+  height: 30px;
   }
 </style>
 <?php }

@@ -67,7 +67,8 @@ get_header(); ?>
 	$wp_query->query(array(
 	'post_type'=>'story',
 	'posts_per_page' => 1,
-	'order' => 'rand'
+	//'order' => 'ASC',
+	'orderby' => 'rand'
 ));
 	if ($wp_query->have_posts()) : ?>
 	<div class="side-story">
@@ -125,8 +126,8 @@ get_header(); ?>
 	'tax_query' => array(
 		array(
 			'taxonomy' => 'category', // your custom taxonomy
-			'field' => 'slug',
-			'terms' => array( 'seminar' ) // the terms (categories) you created
+			'field' => 'id',
+			'terms' => array( 4 ) // seminars
 		)
 	)
 ));

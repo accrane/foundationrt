@@ -58,18 +58,24 @@
 	position: relative;
 	margin-bottom: 30px;
 	font: {
-		font-family: $font__heading;
+		family: $font__heading;
 		size: 19px;
 		weight: 400;
 	}
-	
-	& li {
+	ul {
+		margin: 0 0 30px 0;
+		padding: 0;
+		& li {
+			color: $color-blue;
+		}
+	}
+	& ul li, & li {
 		padding: 0;
 		margin: 0;
 		list-style: none;
-		color: #000;
+
 		font: {
-			font-family: $font__heading;
+			family: $font__heading;
 			size: 19px;
 			weight: 400;
 		}
@@ -144,35 +150,35 @@
 			font-size: 19px;
 		}
 	}
-	& ul {
-		margin: 0 0 30px 0;
-		padding: 0;
-		& li {
-			padding: 0;
-			margin: 0;
-			list-style: none;
-			color: #000;
-			font: {
-				font-family: $font__heading;
-				size: 19px;
-				weight: 700;
-			}
-			& a {
-				color: $color-blue;
-				@include transition(all .3s ease);
-				&:hover {
-					color: rgba($color-blue, .6);
-				}
-			}
-			@media screen and (min-width: $tabwidth) {
-				font-size: 19px;
-			}
-			@media screen and (min-width: $tabwidth) {
-				font-size: 19px;
-			}
+	// & ul {
+	// 	margin: 0 0 30px 0;
+	// 	padding: 0;
+	// 	& li {
+	// 		padding: 0;
+	// 		margin: 0;
+	// 		list-style: none;
+	// 		color: #000;
+	// 		font: {
+	// 			family: $font__heading;
+	// 			size: 19px;
+	// 			weight: 700;
+	// 		}
+	// 		& a {
+	// 			color: $color-blue;
+	// 			@include transition(all .3s ease);
+	// 			&:hover {
+	// 				color: rgba($color-blue, .6);
+	// 			}
+	// 		}
+	// 		@media screen and (min-width: $tabwidth) {
+	// 			font-size: 19px;
+	// 		}
+	// 		@media screen and (min-width: $tabwidth) {
+	// 			font-size: 19px;
+	// 		}
 	
-		}
-	}
+	// 	}
+	// }
 }
 header#masthead {
 	width: 100%;
@@ -344,6 +350,9 @@ footer.site-footer {
 
 	}
 }
+.footer-email {
+	margin-bottom: 40px;
+}
 .home-banner {
 	background-color: #000;
 	clear: both;
@@ -405,6 +414,19 @@ footer.site-footer {
 		float: left;
 	}
 }
+h2.reform-title {
+	width: 100%;
+	clear: both;
+	margin: 20px auto 40px auto;
+	overflow: hidden;
+	color: $color-blue;
+	text-align: center;
+	font: {
+		family: $font__heading;
+		size: 30px;
+		weight: 400;
+	}
+}
 .content-block {
 	width: 100%;
 	position: relative;
@@ -415,7 +437,7 @@ footer.site-footer {
 		float: left;
 		width: 28%;
 	}
-	@media screen and (min-width: $tabwidth) {
+	@media screen and (min-width: $deskwidth) {
 
 	}
 	
@@ -430,6 +452,12 @@ footer.site-footer {
 		float: left;
 		font-size: 24px;
 		font-weight: 400;
+		@media screen and (min-width: $tabwidth) {
+			font-size: 18px;
+		}
+		@media screen and (min-width: $deskwidth) {
+			font-size: 24px;
+		}
 	}
 }
 .block-image {
@@ -485,6 +513,9 @@ footer.site-footer {
 	display: inline-block;
 	margin: 20px auto;
 	position: relative;
+	font: {
+		family: $font__heading;
+	}
 	& a {
 		padding: 10px 20px;
 		display: inline-block;
@@ -540,7 +571,8 @@ article.first {
 }
 article.last {
 	margin: 10px auto;
-
+	padding-bottom: 70px;
+	
 	@media screen and (min-width: $tabwidth) {
 		margin: 0 0 30px 0;
 	}
@@ -578,6 +610,9 @@ article.single {
 	display: inline-block;
 	margin: 20px auto;
 	position: relative;
+	font: {
+		family: $font__heading;
+	}
 	& a {
 		padding: 10px 20px;
 		display: inline-block;

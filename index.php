@@ -64,6 +64,10 @@ get_header(); ?>
 	<div id="primary" class="">
 		<main id="main" class="site-main" role="main">
 
+
+<h2 class="reform-title">
+	<?php the_field('section_title'); ?>
+</h2>
 		
 <?php
 /*
@@ -86,7 +90,7 @@ get_header(); ?>
 			<div class="block-image-no-border ">
 				<img src="<?php echo $thumbOne; ?>" alt="<?php echo $altOne; ?>" title="<?php echo $titleOne; ?>" />
 			</div>
-			<h2><?php the_title(); ?></h2>
+			<h2 class="js-titles"><?php the_title(); ?></h2>
 			<div class="content-block-excerpt">
 				<?php if( $textOne != '' ) {
 					echo $textOne;
@@ -120,7 +124,7 @@ get_header(); ?>
 			<div class="block-image-no-border ">
 				<img src="<?php echo $thumbTwo; ?>" alt="<?php echo $altTwo; ?>" title="<?php echo $titleTwo; ?>" />
 			</div>
-			<h2><?php the_title(); ?></h2>
+			<h2  class="js-titles"><?php the_title(); ?></h2>
 			<div class="content-block-excerpt">
 				<?php if( $textTwo != '' ) {
 					echo $textTwo;
@@ -154,7 +158,7 @@ get_header(); ?>
 			<div class="block-image-no-border ">
 				<img src="<?php echo $thumbThree ?>" alt="<?php echo $altThree; ?>" title="<?php echo $titleThree; ?>" />
 			</div>
-			<h2><?php the_title(); ?></h2>
+			<h2  class="js-titles"><?php the_title(); ?></h2>
 			<div class="content-block-excerpt">
 				<?php if( $textThree != '' ) {
 					echo $textThree;

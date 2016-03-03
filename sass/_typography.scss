@@ -70,22 +70,23 @@ mark, ins {
 big {
 	font-size: 125%;
 }
-.entry-header {
-	& h1 {
-		color: $color-blue;
-		margin: 0 0 15px 0;
-		font: {
-			font-family: $font__heading;
-			size: 24px;
-			weight: 400;
-		}
-		@media screen and (min-width: $tabwidth) {
-			font-size: 28px;
-		}
-		@media screen and (min-width: $tabwidth) {
-			font-size: 30px;
-		}
+.page .entry-header h1,
+.pageheading {
+
+	color: $color-blue;
+	margin: 0 0 15px 0;
+	font: {
+		font-family: $font__heading;
+		size: 24px;
+		weight: 400;
 	}
+	@media screen and (min-width: $tabwidth) {
+		font-size: 28px;
+	}
+	@media screen and (min-width: $tabwidth) {
+		font-size: 30px;
+	}
+
 	
 }
 .entry-content {
@@ -129,6 +130,14 @@ big {
 	@media screen and (min-width: $tabwidth) {
 		font-size: 16px;
 	}
+}
+.entry-meta {
+	font: {
+		font-family: $font__heading;
+		size: 16px;
+		weight: 400;
+	}
+	color: $color-blue;
 }
 article,
 .content-area,

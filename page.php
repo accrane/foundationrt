@@ -20,10 +20,14 @@ get_header(); ?>
 			<?php
 			while ( have_posts() ) : the_post();
 
-				get_template_part( 'template-parts/content', 'page' );
+				if(is_page('sitemap')) {
+					get_template_part( 'template-parts/content', 'page' );
+					wp_nav_menu( array( 'theme_location' => 'sitemap' ) ); 
+				} else {
+					get_template_part( 'template-parts/content', 'page' );
+				}
 
 				
-
 			endwhile; // End of the loop.
 			?>
 
