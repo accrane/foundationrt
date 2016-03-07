@@ -940,6 +940,43 @@ article.single {
 
 		}
 	}
+	.col-left-long {
+		width: 20%;
+		float: left;
+		height: 80px;
+		margin-right: 5%;
+		@media screen and (min-width: $tabwidth) {
+			width: 10%;
+			height: 40px;
+		}
+		@media screen and (min-width: $midwidth) {
+			width: 10%;
+			height: 50px;
+		}
+		@media screen and (min-width: $largetab) {
+			width: 10%;
+			height: 70px;
+		}
+		@media screen and (min-width: $deskwidth) {
+			width: 10%;
+			height: 80px;
+		}
+		@media screen and (min-width: $bigscreen) {
+			width: 10%;
+		}
+	}
+	.col-right-long {
+		width: 75%;
+		float: left;
+		font: {
+			family: $font__heading;
+			size: 19px;
+			weight: 400;
+		}
+		@media screen and (min-width: $tabwidth) {
+
+		}
+	}
 }
 
 .pdf, .doc, .mp3 {

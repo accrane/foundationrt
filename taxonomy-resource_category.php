@@ -56,7 +56,7 @@ get_header(); ?>
 		    		
 
 		    		<div class="resource-col">
-		    			<div class="col-left <?php echo $imageType; ?>">
+		    			<div class="col-left-long <?php echo $imageType; ?>">
 		    				<a href="
 		    				<?php if( $termId == 9 ) {
 			    					echo get_the_permalink();
@@ -69,7 +69,7 @@ get_header(); ?>
 		    				?>
 		    				">Link</a>
 		    			</div><!-- left col -->
-		    			<div class="col-right">
+		    			<div class="col-right-long">
 		    				<?php the_title(); ?>
 		    			</div><!-- col right -->
 		    		</div><!-- resource col -->
