@@ -83,15 +83,18 @@ get_header(); ?>
 		    			</div><!-- left col -->
 		    			<div class="col-right-long">
 		    				<?php the_title(); ?>
+
+		    				<div class="tags">
+				    			<?php 
+									echo get_the_term_list( $post->ID, 'resource_tag', '<div class="tag"></div>', ', ' );
+									?>
+				    		</div><!-- tags -->
+		    				
 		    			</div><!-- col right -->
 		    		</div><!-- resource col -->
 
 		    		
-		    		<div class="tags">
-		    			<?php 
-							echo get_the_term_list( $post->ID, 'resource_tag', '<div class="tag"></div>', ', ' );
-							?>
-		    		</div><!-- tags -->
+		    		
 
 		    	</div><!-- resource page -->
 
