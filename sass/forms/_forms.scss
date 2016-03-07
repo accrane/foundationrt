@@ -1,3 +1,17 @@
 @import "buttons";
 
 @import "fields";
+
+input.search-field {
+	width: 45%;
+	float: left;
+	margin-right: 5%;
+}
+input.search-submit {
+	width: 35%;
+	float: left;
+}
+form.search-form {
+	overflow: hidden;
+	margin-bottom: 30px;
+}

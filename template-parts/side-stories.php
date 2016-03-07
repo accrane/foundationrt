@@ -36,12 +36,12 @@
 	    </h2>
 
 	    
-	    <h3>
+	    <h3 class="story-title">
 	    	<?php the_title(); ?>
 	    </h3>
 
 	    <?php if($position != '') { ?>
-	    	<div class="story-name"><?php echo $position; ?></div>
+	    	<div class="story-position"><?php echo $position; ?></div>
 	    <?php } ?>
 
 	    <?php if($location != '') { ?>
@@ -51,7 +51,9 @@
 	    <?php if($image != '') { ?>
 	    	<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" title="<?php echo $title; ?>" />
 	    <?php } ?>
-	    <?php the_excerpt(); ?>
+
+	    <div class="side-story-excerpt"><?php the_excerpt(); ?></div>
+	    
 
 	    <div class="readmore">
 	    	<a href="<?php the_permalink(); ?>">Read More</a>

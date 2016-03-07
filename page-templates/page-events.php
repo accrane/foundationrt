@@ -27,7 +27,7 @@ get_header(); ?>
 					array(
 						'taxonomy' => 'category', // your custom taxonomy
 						'field' => 'id',
-						'terms' => array( 6 ) // seminars
+						'terms' => array( 6 ) // events
 					)
 				)
 			));
@@ -43,6 +43,8 @@ get_header(); ?>
 			    	$class = 'first';
 			    }
 
+			    $date = DateTime::createFromFormat('Ymd', get_field('date'));
+
 			    ?>
 
 			    <article id="post-<?php the_ID(); ?>" class="articles <?php echo $class; ?> js-blocks">
@@ -52,7 +54,11 @@ get_header(); ?>
 						
 						<div class="entry-meta">
 							<div class="date">
-								<?php echo get_the_date(); ?>
+								<?php 
+								if($date != '') {
+									echo $date->format('M d, Y');
+								}
+								 ?>
 							</div><!-- date -->
 						</div><!-- .entry-meta -->
 						

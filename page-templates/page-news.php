@@ -23,6 +23,7 @@ get_header(); ?>
 				'post_type'=>'post',
 				'posts_per_page' => 9,
 				'paged' => $paged,
+				'category__not_in' => 6
 			));
 				if ($wp_query->have_posts()) : ?>
 			    <?php while ($wp_query->have_posts()) : ?>

@@ -357,7 +357,8 @@ big {
 article,
 .content-area,
 .widget-area,
-.content-area-full {
+.content-area-full,
+.entry-header {
   overflow-wrap: break-word;
   word-wrap: break-word;
   -ms-word-break: break-all;
@@ -538,6 +539,19 @@ input[type="color"] {
 textarea {
   padding-left: 3px;
   width: 100%; }
+
+input.search-field {
+  width: 45%;
+  float: left;
+  margin-right: 5%; }
+
+input.search-submit {
+  width: 35%;
+  float: left; }
+
+form.search-form {
+  overflow: hidden;
+  margin-bottom: 30px; }
 
 /*--------------------------------------------------------------
 # Navigation
@@ -948,6 +962,86 @@ button:focus {
       .widget-area h3 {
         font-size: 19px; } }
 
+.resource-area {
+  width: 100%;
+  position: relative;
+  margin-bottom: 30px;
+  background-color: #000;
+  padding-bottom: 30px;
+  overflow: hidden;
+  font-family: "PT Serif", serif;
+  font-size: 19px;
+  font-weight: 400; }
+  .resource-area ul {
+    margin: 0 0 30px 0;
+    padding: 0; }
+    .resource-area ul li {
+      color: #fff; }
+  .resource-area ul li, .resource-area li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-family: "PT Serif", serif;
+    font-size: 15px;
+    font-weight: 400; }
+    .resource-area ul li a, .resource-area li a {
+      color: #fff;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
+      .resource-area ul li a:hover, .resource-area li a:hover {
+        color: #25547f; }
+    .resource-area ul li:hover, .resource-area li:hover {
+      font-weight: 700; }
+    @media screen and (min-width: 600px) {
+      .resource-area ul li, .resource-area li {
+        font-size: 15px; } }
+    @media screen and (min-width: 600px) {
+      .resource-area ul li, .resource-area li {
+        font-size: 15px; } }
+  .resource-area p {
+    font-size: 16px; }
+  @media screen and (min-width: 600px) {
+    .resource-area {
+      width: 26%;
+      padding: 0 0 30px 3%;
+      float: right;
+      margin: 80px 0 40px 0; } }
+  .resource-area h2 {
+    color: #fff;
+    font-font-family: "PT Serif", serif;
+    font-size: 19px;
+    font-weight: 700; }
+    @media screen and (min-width: 600px) {
+      .resource-area h2 {
+        font-size: 19px; } }
+    @media screen and (min-width: 600px) {
+      .resource-area h2 {
+        font-size: 19px; } }
+  .resource-area h3 {
+    color: #fff;
+    font-font-family: "PT Serif", serif;
+    font-size: 19px;
+    font-weight: 700; }
+    @media screen and (min-width: 600px) {
+      .resource-area h3 {
+        font-size: 19px; } }
+    @media screen and (min-width: 600px) {
+      .resource-area h3 {
+        font-size: 19px; } }
+  .resource-area h4 {
+    color: #fff;
+    margin: 20px 0;
+    font-font-family: "PT Serif", serif;
+    font-size: 16px;
+    font-weight: 400; }
+    @media screen and (min-width: 600px) {
+      .resource-area h4 {
+        font-size: 16px; } }
+    @media screen and (min-width: 600px) {
+      .resource-area h4 {
+        font-size: 16px; } }
+
 header#masthead {
   width: 100%;
   text-align: center; }
@@ -1035,6 +1129,9 @@ footer.site-footer {
   padding: 20px;
   overflow: hidden;
   clear: both;
+  border-bottom-style: solid;
+  border-bottom-width: 8px;
+  border-bottom-color: #25547f;
   font-size: 18px;
   font-family: "Open Sans", sans-serif; }
   footer.site-footer h3 {
@@ -1298,6 +1395,16 @@ article.single {
   font-size: 16px;
   font-family: "PT Serif", serif; }
 
+.side-story-excerpt {
+  font-family: "Open Sans", sans-serif; }
+
+.story-position {
+  color: #000;
+  width: 100%;
+  margin: -15px 0 15px 0;
+  font-size: 16px;
+  font-family: "PT Serif", serif; }
+
 .side-story h3 {
   font-size: 16px;
   color: #25547f; }
@@ -1412,6 +1519,120 @@ article.single {
       width: 45%;
       float: left;
       margin: 0; } }
+
+.single-resource-col {
+  width: 100%;
+  position: relative;
+  padding: 0; }
+  @media screen and (min-width: 600px) {
+    .single-resource-col {
+      width: 20%;
+      float: left; } }
+
+.r-first {
+  margin: 10px auto; }
+  @media screen and (min-width: 600px) {
+    .r-first {
+      margin: 0 5% 30px 0; } }
+
+.r-last {
+  margin: 10px auto; }
+  @media screen and (min-width: 600px) {
+    .r-last {
+      margin: 0 0 30px 0; } }
+
+.resource-title {
+  width: 100%;
+  position: relative;
+  float: left;
+  text-align: center;
+  font-family: "PT Serif", serif; }
+  .resource-title a {
+    width: 100%;
+    padding: 5%;
+    display: inline-block;
+    color: #25547f;
+    -webkit-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+    border-color: #25547f;
+    border-width: 1px;
+    border-style: solid; }
+    .resource-title a:hover {
+      background-color: #25547f;
+      color: #fff; }
+
+.resource-col {
+  width: 100%;
+  border-top: 3px solid #25547f;
+  overflow: hidden;
+  margin-top: 10px;
+  padding-top: 10px;
+  float: left; }
+  .resource-col .col-left {
+    width: 20%;
+    float: left;
+    height: 80px; }
+    @media screen and (min-width: 600px) {
+      .resource-col .col-left {
+        height: 40px; } }
+    @media screen and (min-width: 830px) {
+      .resource-col .col-left {
+        height: 50px; } }
+    @media screen and (min-width: 1040px) {
+      .resource-col .col-left {
+        height: 70px; } }
+    @media screen and (min-width: 1300px) {
+      .resource-col .col-left {
+        height: 80px; } }
+  .resource-col .col-right {
+    width: 75%;
+    float: right;
+    font-family: "PT Serif", serif;
+    font-size: 19px;
+    font-weight: 400; }
+
+.pdf, .doc, .mp3 {
+  text-indent: -9000px; }
+  .pdf a, .doc a, .mp3 a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: 0.3s ease all;
+    -moz-transition: 0.3s ease all;
+    transition: 0.3s ease all;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #000;
+    background-position: center center; }
+    .pdf a:hover, .doc a:hover, .mp3 a:hover {
+      background-color: #25547f; }
+
+.pdf a {
+  background-image: url(images/pdf.png); }
+
+.doc a {
+  background-image: url(images/doc.png); }
+
+.mp3 a {
+  background-image: url(images/mp3.png); }
+
+.tags {
+  width: 100%;
+  margin: 20px 0 30px 0;
+  float: left;
+  font-size: 14px;
+  color: #25547f; }
+
+.tag {
+  width: 30px;
+  height: 20px;
+  margin: 2px 5px 10px 0;
+  float: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  background-image: url(images/tag.png); }
 
 /*--------------------------------------------------------------
 # Infinite scroll
