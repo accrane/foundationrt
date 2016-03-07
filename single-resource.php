@@ -86,7 +86,7 @@ get_header(); ?>
 if($cat != '') : ?>
 <div class="wrapper">
 	<div class="related-posts">
-		<h3>Related Resources</h3>
+		<h3>Related Publications</h3>
 		<?php
 
 
