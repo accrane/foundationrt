@@ -83,7 +83,7 @@
 			color: $color-blue;
 			@include transition(all .3s ease);
 			&:hover {
-				color: rgba($color-blue, .6);
+				//color: rgba($color-blue, .6);
 			}
 		}
 		&:hover {
@@ -185,7 +185,7 @@
 			color: #fff;
 			@include transition(all .3s ease);
 			&:hover {
-				color: rgba($color-blue, 1);
+				//color: rgba($color-blue, 1);
 			}
 		}
 		&:hover {
@@ -852,7 +852,7 @@ article.single {
 	padding: 0;
 
 	@media screen and (min-width: $tabwidth) {
-		width: 20%;
+		width: 40%;
 		float: left;
 	}
 
@@ -861,7 +861,7 @@ article.single {
 .r-first {
 	margin: 10px auto;
 	@media screen and (min-width: $tabwidth) {
-		margin: 0 5% 30px 0;
+		margin: 0 10% 30px 0;
 	}
 }
 .r-last {
@@ -1026,4 +1026,26 @@ article.single {
 		image: url(images/tag.png);
 	}
 }
+.donate-top {
+	width: 100%;
+	overflow: hidden;
+	margin-bottom: 30px;
+	
+	.col-left {
+		width: 100%;
+		float: left;
 
+		@media screen and (min-width: $tabwidth) {
+			width: 45%;
+		}
+	}
+	.col-right {
+		width: 100%;
+		float: right;
+
+		@media screen and (min-width: $tabwidth) {
+			width: 45%;
+		}
+	}
+
+}

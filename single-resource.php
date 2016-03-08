@@ -21,14 +21,19 @@ get_header(); ?>
 			<header class="entry-header">
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 				
-				<div class="entry-meta">
+				<!--<div class="entry-meta">
 					Posted on <?php echo get_the_date(); ?>
-				</div><!-- .entry-meta -->
+				</div> .entry-meta -->
 				
 			</header><!-- .entry-header -->
 
 			<div class="entry-content">
 				<?php
+
+					// Check if the post has a Post Thumbnail assigned to it.
+					if ( has_post_thumbnail() ) {
+					    the_post_thumbnail('large');
+					}
 					the_content( sprintf(
 						/* translators: %s: Name of current post. */
 						wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'acc-starter-theme' ), array( 'span' => array( 'class' => array() ) ) ),
@@ -70,21 +75,11 @@ get_header(); ?>
 
 		// collected info in our query, now we can go query related if there are any
 		endwhile; // End of the loop.
-		?>
-
-
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php get_sidebar('resource'); ?>
-</div><!-- wrapper -->
-
-<?php 
+	
 
 // Only if there are realted tags.
 if($cat != '') : ?>
-<div class="wrapper">
+
 	<div class="related-posts">
 		<h3>Related Publications</h3>
 		<?php
@@ -140,17 +135,17 @@ if($cat != '') : ?>
 		    $mp3 = get_field('mp3');
 
 		    ?>
-		    <div class="single-resource-col <?php echo $class; ?>">
+		    <div class="single-resource-col <?php echo $class; ?> js-blocks">
 		    		
 		    		<div class="resource-title">
-		    			<a class=" js-blocks" href="<?php the_permalink(); ?>">
+		    			<a class=" js-titles" href="<?php the_permalink(); ?>">
 		    				<?php the_title(); ?>
 		    			</a>
 		    		</div>
 
 		    		<div class="resource-col">
 		    			<div class="col-left <?php echo $imageType; ?>">
-		    				<a href="
+		    				<a class=" js-titles" href="
 		    				<?php if( $catId == 9 ) {
 			    					echo get_the_permalink();
 			    				} elseif( $catId == 10 ) {
@@ -181,6 +176,15 @@ if($cat != '') : ?>
 </div><!-- wrapper -->
 <?php
 // end if there are tags
-endif;
+endif; ?>
+
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+<?php get_sidebar('resource'); ?>
+
+
+<?php
 
 get_footer();

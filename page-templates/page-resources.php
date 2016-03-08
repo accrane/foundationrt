@@ -18,20 +18,8 @@ get_header(); ?>
 			endwhile; // End of the loop.
 			?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
 
-
-	<?php get_sidebar('resource'); ?>
-
-
-
-</div><!-- wrapper -->
-
-<div class="clear"></div>
-
-<div class="wrapper">
-	<div class="featured-resources">
+			<div class="featured-resources">
 		<h2>Featured Resources</h2>
 		<?php
 		$args = array( 'hide_empty=0' );
@@ -44,6 +32,7 @@ get_header(); ?>
 			$wp_query->query(array(
 				'post_type'=>'resource',
 				'posts_per_page' => 1,
+				'orderby' => 'rand',
 				'tax_query' => array(
 					array(
 						'taxonomy' => 'resource_category', // your custom taxonomy
@@ -64,7 +53,7 @@ get_header(); ?>
 		    //echo $termId;
 		    // set the class for the row
 
-		    if( $i == 4 ) {
+		    if( $i == 2 ) {
 		    	$class = 'r-last';
 		    	$i = 0;
 		    } else {
@@ -91,16 +80,16 @@ get_header(); ?>
 
 		    ?>
 
-		    	<div class="single-resource-col <?php echo $class; ?>">
+		    	<div class="single-resource-col <?php echo $class; ?> js-blocks">
 		    		
 		    		<?php if( $termId == '9') { ?>
-			    		<div class="resource-title js-blocks">
+			    		<div class="resource-title js-titles">
 			    			<a href="<?php the_permalink(); ?>">
 			    				<?php echo $term->name; ?>
 			    			</a>
 			    		</div>
 		    		<?php } else { ?>
-		    			<div class="resource-title js-blocks">
+		    			<div class="resource-title js-titles">
 			    			<a href="<?php echo get_bloginfo('url') . '/categorized'.'/'. $term->slug; ?>">
 			    				<?php echo $term->name; ?>
 			    			</a>
@@ -122,7 +111,17 @@ get_header(); ?>
 		    				">Link</a>
 		    			</div><!-- left col -->
 		    			<div class="col-right">
-		    				<?php the_title(); ?>
+		    				<a href="
+		    				<?php if( $termId == 9 ) {
+			    					echo get_the_permalink();
+			    				} elseif( $termId == 10 ) {
+			    					echo $mp3;
+			    				} else {
+			    					echo $pdf;
+			    				}
+
+		    				?>
+		    				"><?php the_title(); ?></a>
 		    			</div><!-- col right -->
 		    		</div><!-- resource col -->
 
@@ -141,6 +140,21 @@ get_header(); ?>
 
 		?>
 	</div><!-- featured resources -->
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+
+	<?php get_sidebar('resource'); ?>
+
+
+
+</div><!-- wrapper -->
+
+<div class="clear"></div>
+
+<div class="wrapper">
+	
 </div><!-- wrapper -->
 
 <?php

@@ -8,7 +8,7 @@
  */
 
 get_header(); ?>
-
+<div class="wrapper">
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
@@ -21,15 +21,82 @@ get_header(); ?>
 
 			<?php
 			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+			while ( have_posts() ) : the_post(); 
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
+			// Get our terms for each taxonomy
+			$taxonomyCat = 'resource_category';
+			$terms = get_the_terms( get_the_ID(), $taxonomyCat );
 
+			// echo '<pre>';
+			// print_r($terms);
+			$termId = $terms[0]->term_id;
+
+			// Set the icon based on category
+
+		    if( $termId == '7') { // Bibliographies
+		    	$imageType = 'pdf';
+		    } elseif( $termId == '10') { // Sermons
+		    	$imageType = 'mp3';
+		    } elseif( $termId == '9') { // Publications
+		    	$imageType = 'doc';
+		    } elseif( $termId == '8') { // Studies
+		    	$imageType = 'pdf';
+		    } else {
+		    	$imageType = '';
+		    }
+
+		    // get files
+		    $pdf = get_field('pdf');
+		    $mp3 = get_field('mp3');
+
+
+
+			?>
+
+				<div class="tax-resource-col <?php echo $class; ?>">
+		    		
+		    		
+
+		    		<div class="resource-col">
+		    			 <div class="col-left-long <?php echo $imageType; ?>">
+		    				<a href="
+		    				<?php 
+		    				if( $termId == 9 ) {
+			    					echo get_the_permalink();
+			    				} elseif( $termId == 10 ) {
+			    					echo $mp3;
+			    				} else {
+			    					echo $pdf;
+			    				}
+
+		    				?>
+		    				">Link</a>
+		    			</div> <!-- resource col -->
+		    			<div class="col-right-long">
+		    				<a href="
+		    				<?php if( $termId == 9 ) {
+			    					echo get_the_permalink();
+			    				} elseif( $termId == 10 ) {
+			    					echo $mp3;
+			    				} else {
+			    					echo $pdf;
+			    				}
+
+		    				?>
+		    				"><?php the_title(); ?></a>
+		    			</div><!-- col right -->
+		    		</div><!-- resource col -->
+
+		    		
+		    		<div class="tags">
+		    			<?php 
+							echo get_the_term_list( $post->ID, 'resource_tag', '<div class="tag"></div>', ', ' );
+							?>
+		    		</div><!-- tags -->
+
+		    	</div><!-- tax-resource-col -->
+
+			<?php
 			endwhile;
 
 			the_posts_navigation();
@@ -44,5 +111,7 @@ get_header(); ?>
 	</section><!-- #primary -->
 
 <?php
-get_sidebar();
+get_sidebar('resource'); ?>
+</div>
+<?php 
 get_footer();

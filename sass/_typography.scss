@@ -70,9 +70,9 @@ mark, ins {
 big {
 	font-size: 125%;
 }
-.page .entry-header h1,
+.entry-header h1,
 .pageheading {
-
+	line-height: 1;
 	color: $color-blue;
 	margin: 0 0 15px 0;
 	font: {
@@ -150,7 +150,7 @@ article,
 
   -ms-word-break: break-all;
   /* This is the dangerous one in WebKit, as it breaks things wherever */
-  word-break: break-all;
+  //word-break: break-all;
   /* Instead use this non-standard one: */
   word-break: break-word;
 

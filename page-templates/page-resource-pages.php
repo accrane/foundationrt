@@ -82,7 +82,17 @@ get_header(); ?>
 		    				">Link</a>
 		    			</div><!-- left col -->
 		    			<div class="col-right-long">
-		    				<?php the_title(); ?>
+		    				<a href="
+		    				<?php if( $termId == 9 ) {
+			    					echo get_the_permalink();
+			    				} elseif( $termId == 10 ) {
+			    					echo $mp3;
+			    				} else {
+			    					echo $pdf;
+			    				}
+
+		    				?>
+		    				"><?php the_title(); ?></a>
 
 		    				<div class="tags">
 				    			<?php 

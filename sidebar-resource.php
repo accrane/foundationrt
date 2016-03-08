@@ -20,36 +20,52 @@
 
 	<?php 
 	wp_reset_query();
-	//wp_reset_postdata();
 	global $post;     // outside the loop
 
-	$current = get_the_ID();
+	// If we are on a Single View or Searching by Tag
+	if( is_single() || is_archive() || is_search() ) :
+
+		// Resource Parent page ID
+		$ID = '24';
+		    $arg = array(
+				'child_of' => $ID,
+				//'exclude' => $current,
+				'title_li' => ''
+			);
+		    //echo '<div class="organization" >' . get_the_title($ID) . '</div>';
+		    wp_list_pages($arg);
 	
+	// if is not a Single Resource Viewor Search by Tag
+	else:
+ 
+		$current = get_the_ID();
 
-	if ( is_page() && $post->post_parent ) {
-	    
-	    // This is a subpage
-	    $parentPage = $post->post_parent;
-		// List pages arguments
-	    $arg = array(
-			'child_of' => $parentPage,
-			'exclude' => $current,
-			'title_li' => ''
-		);
-		//echo '<div class="organization" >' . get_the_title($parentPage) . '</div>';
-		wp_list_pages($arg);
+		if ( is_page() && $post->post_parent ) {
+		    
+		    // This is a subpage
+		    $parentPage = $post->post_parent;
+			// List pages arguments
+		    $arg = array(
+				'child_of' => $parentPage,
+				'exclude' => $current,
+				'title_li' => ''
+			);
+			//echo '<div class="organization" >' . get_the_title($parentPage) . '</div>';
+			wp_list_pages($arg);
 
-	} else {
-	    // This is not a subpage
-	    $ID = get_the_ID();
-	    $arg = array(
-			'child_of' => $ID,
-			'exclude' => $current,
-			'title_li' => ''
-		);
-	    //echo '<div class="organization" >' . get_the_title($ID) . '</div>';
-	    wp_list_pages($arg);
-	}
+		} else {
+		    // This is not a subpage
+		    $ID = get_the_ID();
+		    $arg = array(
+				'child_of' => $ID,
+				'exclude' => $current,
+				'title_li' => ''
+			);
+		    //echo '<div class="organization" >' . get_the_title($ID) . '</div>';
+		    wp_list_pages($arg);
+		}
+
+	endif; 
 
 	// echo '<pre>';
 	// print_r($children);

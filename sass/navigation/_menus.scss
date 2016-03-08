@@ -20,7 +20,7 @@ ul#primary-menu {
 	float: left;
 	width: 100%;
 	background-color: $color-blue;
-	padding: 20px 0;
+	padding: 0;
 	font-family: $font__main;
 
 	ul {
@@ -104,16 +104,18 @@ ul#primary-menu {
 		li {
 			font-size: 22px;
 			width: 100%;
+			line-height: 60px;
 		}
 		ul {
 			ul {
+				border-top: 3px solid #000;
 				margin: 5px auto 20px auto;
 				ul {
 					
 				}
 				li {
 					font-size: 14px;
-
+					line-height: 1.5;
 				}
 				a {
 					
@@ -140,7 +142,8 @@ ul#primary-menu {
 		ul {
 			ul {
 				position: absolute;
-				top: 1.5em;
+				// top: 1.5em;
+				top: 60px;
 				left: -999em;
 				margin: 0 auto;
 				

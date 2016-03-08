@@ -9,7 +9,15 @@
 
 get_header(); ?>
 <div class="wrapper">
-	<?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
+	<?php if( have_posts() ) : while( have_posts() ) : the_post(); 
+
+		$intro = get_field('intro_text');
+		$paypalText = get_field('paypal_text');
+		$paypalBtn = get_field('paypal_button');
+		$givText = get_field('give_now_text');
+		$givBtn = get_field('give_now_button');
+
+	?>
 	<div id="primary" class="content-area js-main-cols">
 		<main id="main" class="site-main" role="main">
 
@@ -23,6 +31,33 @@ get_header(); ?>
 					</header><!-- .entry-header -->
 
 					<div class="entry-content">
+
+						<?php if($intro != '') {
+							echo '<p>' . $intro . '</p>';
+						} ?>
+
+
+						<div class="donate-top">
+		    			<div class="col-left">
+		    				<?php 
+
+			    				echo '<p>' . $givText . '</p>';
+			    				echo $givBtn;
+
+		    				 ?>
+		    			</div><!-- left col -->
+		    			<div class="col-right">
+		    				<?php 
+
+			    				echo '<p>' . $paypalText . '</p>';
+			    				echo $paypalBtn;
+
+		    				 ?>
+		    			</div><!-- col right -->
+		    		</div><!-- resource col -->
+
+
+
 						<?php the_field('content');?>
 
 					</div><!-- .entry-content -->
