@@ -69,6 +69,11 @@ $sitemap = get_field('sitemap_link', 'option');
 					<!--End CTCT Sign-Up Form-->
 
 				</div><!-- footer-email -->
+
+				<div class="footer-donate">
+		        	<a href="<?php bloginfo('url'); ?>/donate">Donate</a>
+		        </div>
+
 				<div class="creds">
 					<?php echo '<a href="'.$sitemap.'">sitemap</a> | site by <a target="_blank" href="http://bellaworksweb.com/?r=foundation">Bellaworks</a>'; ?>
 				</div><!-- creds -->

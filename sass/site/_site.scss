@@ -30,6 +30,22 @@
 		padding: 0;
 	}
 }
+.banner-wrapper {
+	width: 90%;
+	padding: 0;
+	margin: 0 auto;
+	position: relative;
+	clear: both;
+	overflow: hidden;
+
+	@media screen and (min-width: $tabwidth) {
+		
+	}
+	@media screen and (min-width: $deskwidth) {
+		// width: 1280px;
+		padding: 0;
+	}
+}
 .content-area {
 	width: 100%;
 	float: left;
@@ -57,6 +73,7 @@
 	width: 100%;
 	position: relative;
 	margin-bottom: 30px;
+	overflow: hidden;
 	font: {
 		family: $font__heading;
 		size: 19px;
@@ -311,8 +328,9 @@ header#masthead {
 	}
 }
 .donate {
+	display: none;
 	width: auto;
-	display: inline-block;
+	
 	text-align: center;
 	margin: 10px auto;
 	& a {
@@ -329,12 +347,33 @@ header#masthead {
 	}
 
 	@media screen and (min-width: $tabwidth) {
+		display: block;
 		position: absolute;
 		margin: 0;
 		top: -5px;
 		right: 0px;
 	}
 	@media screen and (min-width: $deskwidth) {
+	}
+}
+.footer-donate {
+	display: block;
+	width: auto;
+	display: inline-block;
+	text-align: center;
+	margin: 10px auto 40px auto;
+	& a {
+		background-color: $color-blue;
+		color: #fff;
+		border-radius: 5px;
+		padding: 10px 30px;
+		display: block;
+		text-decoration: none;
+		
+	}
+
+	@media screen and (min-width: $tabwidth) {
+		display: none
 	}
 }
 .site-description {
@@ -344,10 +383,10 @@ header#masthead {
 	margin: 10px auto;
 	font: {
 		family: $font__heading;
-		size: 22px;
+		size: 16px;
 	}
 	@media screen and (min-width: $tabwidth) {
-		
+		font-size: 20px;
 	}
 	@media screen and (min-width: $largetab) {
 		font-size: 20px;
@@ -441,6 +480,27 @@ footer.site-footer {
 	background-color: #000;
 	clear: both;
 	margin: 0 0 50px 0;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+}
+.bann-img {
+	width: 60%;
+	margin: 0 auto;
+
+	@media screen and (min-width: $tabwidth) {
+		width: 200px;
+		float: left;
+	}
+	@media screen and (min-width: $midwidth) {
+		width: 200px;
+	}
+	@media screen and (min-width: $largetab) {
+		width: 250px;
+	}
+	@media screen and (min-width: $deskwidth) {
+
+	}
 }
 .bann-img img {width: 100%;}
 .banner-text {
@@ -787,7 +847,7 @@ article.single {
 	position: relative;
 	a {
 		width: 100%;
-		display: block;
+		display: inline-block;
 		border: 1px solid $color-blue;
 		background-color: rgba($color-blue, 0);
 		padding: 10px 0;
@@ -1048,4 +1108,17 @@ article.single {
 		}
 	}
 
+}
+.pub-image {
+	width: 100%;
+	margin: 10px auto;
+	& img {
+		width: 100%;
+	}
+
+	@media screen and (min-width: $tabwidth) {
+		width: 130px;
+		margin: 0 15px 15px 0;
+		float: left;
+	}
 }

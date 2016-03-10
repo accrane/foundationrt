@@ -63,6 +63,7 @@ get_header(); ?>
 	    // get files
 	    $pdf = get_field('pdf');
 	    $mp3 = get_field('mp3');
+	    $date = get_field('date');
 
 	?>
 
@@ -93,6 +94,10 @@ get_header(); ?>
 
 		    				?>
 		    				"><?php the_title(); ?></a>
+
+		    				<?php if($date != '') { ?>
+		    					<div class="date"><?php echo $date; ?></div>
+		    				<?php } ?>
 
 		    				<div class="tags">
 				    			<?php 

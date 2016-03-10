@@ -12,7 +12,7 @@ get_header(); ?>
 	<div id="primary" class="content-area js-main-cols">
 		<main id="main" class="site-main" role="main">
 
-			<header class="pageheading">Resources</header>
+			<!-- <header class="pageheading">Resources</header> -->
 
 		<?php
 		while ( have_posts() ) : the_post(); ?>
@@ -32,7 +32,9 @@ get_header(); ?>
 
 					// Check if the post has a Post Thumbnail assigned to it.
 					if ( has_post_thumbnail() ) {
-					    the_post_thumbnail('large');
+						echo '<div class="pub-image">';
+					    	the_post_thumbnail('large');
+					    echo '</div>';
 					}
 					the_content( sprintf(
 						/* translators: %s: Name of current post. */
@@ -173,7 +175,7 @@ if($cat != '') : ?>
 
 		<?php endwhile; endif; ?>
 	</div><!-- related posts -->
-</div><!-- wrapper -->
+
 <?php
 // end if there are tags
 endif; ?>
@@ -184,7 +186,7 @@ endif; ?>
 
 <?php get_sidebar('resource'); ?>
 
-
+</div><!-- wrapper -->
 <?php
 
 get_footer();

@@ -52,8 +52,10 @@ get_header(); ?>
 	?>
 
 	<div class="home-banner">
-		<div class="wrapper bann-img">
-			<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" title="<?php echo $title; ?>" />
+		<div class="banner-wrapper">
+			<div class="bann-img">
+				<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" title="<?php echo $title; ?>" />
+			</div>
 			<div class="banner-text"><?php echo $bannerText; ?></div>
 		</div><!-- wrapper -->
 	</div><!-- home banner -->
