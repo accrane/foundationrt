@@ -174,7 +174,8 @@
 	position: relative;
 	margin-bottom: 30px;
 	background-color: #000;
-	padding-bottom: 30px;
+	padding: 5%;
+	
 	overflow: hidden;
 	font: {
 		family: $font__heading;
@@ -210,6 +211,7 @@
 		}
 		@media screen and (min-width: $tabwidth) {
 			font-size: 15px;
+			
 		}
 		@media screen and (min-width: $tabwidth) {
 			font-size: 15px;

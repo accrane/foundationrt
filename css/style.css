@@ -342,9 +342,13 @@ big {
   .entry-content h6 {
     font-size: 12px;
     font-weight: 700; }
+  .entry-content img {
+    width: 100%; }
   @media screen and (min-width: 600px) {
     .entry-content {
-      font-size: 16px; } }
+      font-size: 16px; }
+      .entry-content img {
+        width: auto; } }
   @media screen and (min-width: 600px) {
     .entry-content {
       font-size: 16px; } }
@@ -998,7 +1002,7 @@ button:focus {
   position: relative;
   margin-bottom: 30px;
   background-color: #000;
-  padding-bottom: 30px;
+  padding: 5%;
   overflow: hidden;
   font-family: "PT Serif", serif;
   font-size: 19px;
