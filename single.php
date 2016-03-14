@@ -21,9 +21,11 @@ get_header(); ?>
 			<header class="entry-header">
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 				
-				<div class="entry-meta">
-					Posted on <?php echo get_the_date(); ?>
-				</div><!-- .entry-meta -->
+				<?php if( !in_category('events')) { ?>
+					<div class="entry-meta">
+						Posted on <?php echo get_the_date(); ?>
+					</div><!-- .entry-meta -->
+				<?php } ?>
 				
 			</header><!-- .entry-header -->
 

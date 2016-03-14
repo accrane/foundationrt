@@ -82,19 +82,13 @@ get_header(); ?>
 
 		    	<div class="single-resource-col <?php echo $class; ?> js-blocks">
 		    		
-		    		<?php if( $termId == '9') { ?>
-			    		<div class="resource-title js-titles">
-			    			<a href="<?php the_permalink(); ?>">
-			    				<?php echo $term->name; ?>
-			    			</a>
-			    		</div>
-		    		<?php } else { ?>
+		    		
 		    			<div class="resource-title js-titles">
-			    			<a href="<?php echo get_bloginfo('url') . '/categorized'.'/'. $term->slug; ?>">
+			    			<a href="<?php echo get_bloginfo('url') . '/resources'.'/'. $term->slug; ?>">
 			    				<?php echo $term->name; ?>
 			    			</a>
 			    		</div>
-		    		<?php } ?>
+		    		
 
 		    		<div class="resource-col">
 		    			<div class="col-left <?php echo $imageType; ?>">
