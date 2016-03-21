@@ -33,7 +33,7 @@ add_filter('login_headerurl','loginpage_custom_link');
 	Favicon.
 ---------------------------------------*/
 function mytheme_favicon() { 
- echo '<link rel="shortcut icon" href="' . get_bloginfo('stylesheet_directory') . '/images/favicon.ico" >'; 
+ echo '<link rel="shortcut icon" href="' . get_bloginfo('stylesheet_directory') . '/css/images/favicon.ico" >'; 
 } 
 add_action('wp_head', 'mytheme_favicon');
 // ACF Options page
