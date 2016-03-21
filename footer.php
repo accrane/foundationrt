@@ -84,6 +84,6 @@ $sitemap = get_field('sitemap_link', 'option');
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-<?php the_field('google_analytics'); ?>
+<?php the_field('google_analytics', 'option'); ?>
 </body>
 </html>
