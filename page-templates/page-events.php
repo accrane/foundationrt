@@ -21,7 +21,7 @@ get_header(); ?>
 				$wp_query = new WP_Query();
 				$wp_query->query(array(
 				'post_type'=>'post',
-				'posts_per_page' => 3,
+				'posts_per_page' => -1,
 				'paged' => $paged,
 				'tax_query' => array(
 					array(
@@ -88,7 +88,7 @@ get_header(); ?>
 				</article><!-- #post-## -->
 
 			<?php endwhile; ?>
-			<?php pagi_posts_nav(); ?>
+			<?php //pagi_posts_nav(); ?>
 		<?php endif; 
 				wp_reset_query();
 		?>
