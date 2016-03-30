@@ -178,7 +178,7 @@ article,
 		size: 19px;
 		weight: 400;
 	}
-	padding: 10px 20px;
+	
 	text-align: center;
 	color: $color-blue;
 	width: auto;
@@ -187,5 +187,11 @@ article,
 	border: 1px solid $color-blue;
 	a {
 		display: block;
+		padding: 10px 20px;
+
+		&:hover {
+			color: #fff;
+			background-color: $color-blue;
+		}
 	}
 }

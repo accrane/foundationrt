@@ -380,7 +380,6 @@ article,
   font-family: "PT Serif", serif;
   font-size: 19px;
   font-weight: 400;
-  padding: 10px 20px;
   text-align: center;
   color: #25547f;
   width: auto;
@@ -388,7 +387,11 @@ article,
   float: left;
   border: 1px solid #25547f; }
   .editor-button a {
-    display: block; }
+    display: block;
+    padding: 10px 20px; }
+    .editor-button a:hover {
+      color: #fff;
+      background-color: #25547f; }
 
 /*--------------------------------------------------------------
 # Elements
